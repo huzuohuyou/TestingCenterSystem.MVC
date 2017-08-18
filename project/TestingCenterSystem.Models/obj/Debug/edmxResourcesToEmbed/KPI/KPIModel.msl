@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KPIModelStoreContainer" CdmEntityContainer="KPIEntities">
+    <EntitySetMapping Name="ED_KPI_INFO">
+      <EntityTypeMapping TypeName="KPIModel.ED_KPI_INFO">
+        <MappingFragment StoreEntitySet="ED_KPI_INFO">
+          <ScalarProperty Name="KPI_ID" ColumnName="KPI_ID" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="KPI_CODE" ColumnName="KPI_CODE" />
+          <ScalarProperty Name="KPI_NAME" ColumnName="KPI_NAME" />
+          <ScalarProperty Name="KPI_ALIAS" ColumnName="KPI_ALIAS" />
+          <ScalarProperty Name="KPI_TYPE_CODE" ColumnName="KPI_TYPE_CODE" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ED_KPI_VALUE">
+      <EntityTypeMapping TypeName="KPIModel.ED_KPI_VALUE">
+        <MappingFragment StoreEntitySet="ED_KPI_VALUE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="KPI_ID" ColumnName="KPI_ID" />
+          <ScalarProperty Name="INDEX_VALUE" ColumnName="INDEX_VALUE" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_KPI_PARAM">
+      <EntityTypeMapping TypeName="KPIModel.EP_KPI_PARAM">
+        <MappingFragment StoreEntitySet="EP_KPI_PARAM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SD_ITEM_ID" ColumnName="SD_ITEM_ID" />
+          <ScalarProperty Name="KPI_PARAM_NAME" ColumnName="KPI_PARAM_NAME" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="KPI_ID" ColumnName="KPI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EP_KPI_SET">
+      <EntityTypeMapping TypeName="KPIModel.EP_KPI_SET">
+        <MappingFragment StoreEntitySet="EP_KPI_SET">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KPI_ID" ColumnName="KPI_ID" />
+          <ScalarProperty Name="KPI_DESC" ColumnName="KPI_DESC" />
+          <ScalarProperty Name="NUM_FORMULA" ColumnName="NUM_FORMULA" />
+          <ScalarProperty Name="FRA_FORMULA" ColumnName="FRA_FORMULA" />
+          <ScalarProperty Name="INVALID_FLAG" ColumnName="INVALID_FLAG" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAT_SD_ITEM_RESULT">
+      <EntityTypeMapping TypeName="KPIModel.PAT_SD_ITEM_RESULT">
+        <MappingFragment StoreEntitySet="PAT_SD_ITEM_RESULT">
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="SD_ITEM_CODE" ColumnName="SD_ITEM_CODE" />
+          <ScalarProperty Name="SD_ITEM_VALUE" ColumnName="SD_ITEM_VALUE" />
+          <ScalarProperty Name="SD_ITEM_U_VALUE" ColumnName="SD_ITEM_U_VALUE" />
+          <ScalarProperty Name="UPDATE_USER_ID" ColumnName="UPDATE_USER_ID" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_CPATS">
+      <EntityTypeMapping TypeName="KPIModel.SD_CPATS">
+        <MappingFragment StoreEntitySet="SD_CPATS">
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_CPAT_DATE" ColumnName="SD_CPAT_DATE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_INFO">
+      <EntityTypeMapping TypeName="KPIModel.SD_INFO">
+        <MappingFragment StoreEntitySet="SD_INFO">
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_NAME" ColumnName="SD_NAME" />
+          <ScalarProperty Name="SD_ALIAS" ColumnName="SD_ALIAS" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="SC_FLAG" ColumnName="SC_FLAG" />
+          <ScalarProperty Name="EV_FLAG" ColumnName="EV_FLAG" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_ITEM_INFO">
+      <EntityTypeMapping TypeName="KPIModel.SD_ITEM_INFO">
+        <MappingFragment StoreEntitySet="SD_ITEM_INFO">
+          <ScalarProperty Name="SD_ITEM_ID" ColumnName="SD_ITEM_ID" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_ITEM_CODE" ColumnName="SD_ITEM_CODE" />
+          <ScalarProperty Name="SD_ITEM_NAME" ColumnName="SD_ITEM_NAME" />
+          <ScalarProperty Name="DATA_TYPE" ColumnName="DATA_TYPE" />
+          <ScalarProperty Name="SD_ITEM_ALIAS" ColumnName="SD_ITEM_ALIAS" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="ITEM_TYPE_CODE" ColumnName="ITEM_TYPE_CODE" />
+          <ScalarProperty Name="ITEM_DATA_TYPE" ColumnName="ITEM_DATA_TYPE" />
+          <ScalarProperty Name="ITEM_UNIT" ColumnName="ITEM_UNIT" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

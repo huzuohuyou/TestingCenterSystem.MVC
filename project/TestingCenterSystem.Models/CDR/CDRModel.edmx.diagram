@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="32fdfd222d4440f1bb4215961c4b412a" Name="Diagram1" ZoomLevel="33">
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_ANESTHESIA_RECORD" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_ASSESSMENT_RECORD" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_CHECK_RECORD" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_CONSULT_RECORD" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_DIAGNOSIS" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_DICT_CHECKTEST" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_DICT_DEPT" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_DICT_DETAIL" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_DICT_DIAG" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_DICT_DRUG" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_DICT_EMPLOYEE" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_DICT_MASTER" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_EMR_RECORD" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_IN_ORDERS" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_IN_PATIENT" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_INFECTION_RECORD" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_MEDICAL_RECORD" Width="1.5" PointX="6.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_NURSE_RECORD" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_OPERATION_RECORD" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_OUT_EMR" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_OUT_PATIENT" Width="1.5" PointX="14.75" PointY="5.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_OUT_RECIPE" Width="1.5" PointX="8.75" PointY="14.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_PATHOLOGY_RECORD" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_TEST_RECORD" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_TEST_RESULT" Width="1.5" PointX="16.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_TEST_RESULT_GERM" Width="1.5" PointX="16.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TestCenterSystem.Model.CDRModel.DP_TRANS_RECORD" Width="1.5" PointX="16.75" PointY="16.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

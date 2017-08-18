@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "添加公共依赖数据项";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+</head>
+<body>
+    @*<div class="panel animated fadeIn">*@
+    <div class="panel-body">
+        <div id="toolbar" class="elight-table-toolbar">
+            @*<div class="layui-btn-group">
+                    <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_select()"><i class="layui-icon">&#xe60b;</i>查看</button>
+                </div>*@
+            <label class="layui-form-label" style="width:180px;color:red;padding-left:0px">注：必须选够 @ViewBag.ItemCount 个数据项</label>
+            <button id="btnSearch" class="toolbar-search-button layui-btn layui-btn-normal layui-btn-small">
+                <i class="layui-icon">&#xe615;</i>
+            </button>
+            <div class="toolbar-search-input">
+                <input type="text" id="keyWord" placeholder="请输入数据项名称、代码、类别" autocomplete="off" class="layui-input" style="width: 300px;">
+            </div>
+        </div>
+        <br />
+        <table id="gridList" class="layui-form layui-table table-hover elight-table" style="background-color:white;" lay-skin="line">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" lay-skin="primary">
+                    </th>
+                    <th>数据项代码</th>
+                    <th>数据项名称</th>
+                    <th>数据项类别</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="content"></tbody>
+        </table>
+        <div id="paged" style="padding-left:20px;"></div>
+        <div style="display: none">
+            <button id="btnSubmit" class="layui-btn" lay-submit lay-filter="add">提交</button>
+        </div>
+    </div>
+    @*</div>*@
+</body>
+</html>
+<!--内容模板-->
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr onclick="btn_checked(this)">
+        <td>
+            <input id="selected" name="select" type="checkbox" lay-skin="primary" value="{{item.Id}}">
+        </td>
+        <td>{{item.Account}}</td>
+        <td>{{item.RealName}}</td>
+        <td>{{item.DeptName}}</td>
+        <td>
+            <button class="toolbar-search-button layui-btn layui-btn-normal layui-btn-small" onclick="btn_select(id)">查看</button>
+        </td>
+    </tr>
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="8">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+<script type="text/javascript">
+    var paging;
+    var itemList;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form', 'layer'], function () {
+        var layer = parent.layer || layui.layer;
+        var form = layui.form();
+        paging = layui.paging();
+        initGrid();
+        $('#btnSearch').click(initGrid);
+        $('#keyWord').bindEnterEvent(initGrid);
+
+        //监听提交
+        form.on('submit(add)', function (data) {
+            var num=@ViewBag.ItemCount;
+            if (itemList.length != num ) {
+                layer.msg("必须选够"+num+"个数据项才可添加",{icon:2});
+                return false;
+            }
+            $.formSubmit({
+                url: "/TestCenterSystem/CommonItem/AddCommonDepend",
+                data: itemList.join(",")
+            });
+            return false;
+        });
+    });
+
+    function btn_checked(tr) {
+        if (itemList == null)
+            itemList = new Array();
+        var field = tr.cells[0].children[0];
+        if (!field.checked)
+            itemList.push([field.value]);
+        else {
+            var list = itemList.concat();
+            itemList.splice(0, itemList.length);
+            for (var i = 0; i < list.length; i++) {
+                if (list[i][0] != field.value) {
+                    itemList.push([list[i][0]]);
+                }
+            }
+            list.splice(0, list.length);
+        }
+        alert(itemList.length);
+    }
+
+    function initGrid() {
+        paging.init({
+            url: '/System/User/Index',
+            elem: '#content',
+            tempElem: '#contentTpl',
+            params: {
+                keyWord: $("#keyWord").val()
+            },
+            singleSelected: false,//设置单选或者多选
+            pageConfig: {
+                elem: '#paged',
+                pageSize: 10,
+            },
+            success: function () {
+
+            }
+        });
+    }
+    function btn_select(id) {
+        //跳转到数据项配置
+        //判断是否有依赖  判断来源
+        $.layerOpen({
+            id: "detail",
+            title: "查看数据项",
+            width: "680px",
+            height: "530px",
+            content: "/TestCenterSystem/DataItem/Form?primaryKey=" + id,
+            btn: null
+        });
+    }
+</script>
+

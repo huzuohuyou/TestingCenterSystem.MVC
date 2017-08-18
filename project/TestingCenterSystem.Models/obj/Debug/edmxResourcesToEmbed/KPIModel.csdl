@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="KPIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EP_KPI_PARAM" EntityType="KPIModel.EP_KPI_PARAM" />
+    <EntitySet Name="EP_KPI_SET" EntityType="KPIModel.EP_KPI_SET" />
+    <EntitySet Name="TC_DB_CONF" EntityType="KPIModel.TC_DB_CONF" />
+    <EntitySet Name="TC_PROJECT" EntityType="KPIModel.TC_PROJECT" />
+    <EntitySet Name="TC_SD_CAT_CONF" EntityType="KPIModel.TC_SD_CAT_CONF" />
+    <EntitySet Name="TC_SD_CPAT_DETAIL" EntityType="KPIModel.TC_SD_CPAT_DETAIL" />
+    <EntitySet Name="TC_SD_CPATS" EntityType="KPIModel.TC_SD_CPATS" />
+    <EntitySet Name="TC_SD_EKPI_FORMULA" EntityType="KPIModel.TC_SD_EKPI_FORMULA" />
+    <EntitySet Name="TC_SD_EKPI_INFO" EntityType="KPIModel.TC_SD_EKPI_INFO" />
+    <EntitySet Name="TC_SD_EKPI_PARAM" EntityType="KPIModel.TC_SD_EKPI_PARAM" />
+    <EntitySet Name="TC_SD_EPKI_VALUE" EntityType="KPIModel.TC_SD_EPKI_VALUE" />
+    <EntitySet Name="TC_SD_ERROR_LOG" EntityType="KPIModel.TC_SD_ERROR_LOG" />
+    <EntitySet Name="TC_SD_FILTER_INFO" EntityType="KPIModel.TC_SD_FILTER_INFO" />
+    <EntitySet Name="TC_SD_INFO" EntityType="KPIModel.TC_SD_INFO" />
+    <EntitySet Name="TC_SD_ITEM_DEP" EntityType="KPIModel.TC_SD_ITEM_DEP" />
+    <EntitySet Name="TC_TC_SD_ITEM_INFO" EntityType="KPIModel.TC_SD_ITEM_INFO" />
+    <EntitySet Name="TC_SD_ITEM_OPTION" EntityType="KPIModel.TC_SD_ITEM_OPTION" />
+    <EntitySet Name="TC_SD_ITEM_VALUE" EntityType="KPIModel.TC_SD_ITEM_VALUE" />
+    <EntitySet Name="TC_SD_PROC_LOG" EntityType="KPIModel.TC_SD_PROC_LOG" />
+    <EntitySet Name="TC_SD_PROC_STAT" EntityType="KPIModel.TC_SD_PROC_STAT" />
+    <AssociationSet Name="FK_TC_DB_CO_REFERENCE_TC_PROJE" Association="KPIModel.FK_TC_DB_CO_REFERENCE_TC_PROJE">
+      <End Role="TC_PROJECT" EntitySet="TC_PROJECT" />
+      <End Role="TC_DB_CONF" EntitySet="TC_DB_CONF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_IN_REFERENCE_TC_PROJE" Association="KPIModel.FK_TC_SD_IN_REFERENCE_TC_PROJE">
+      <End Role="TC_PROJECT" EntitySet="TC_PROJECT" />
+      <End Role="TC_SD_INFO" EntitySet="TC_SD_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_EK_REFERENCE_TC_SD_CA" Association="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_CA">
+      <End Role="TC_SD_CAT_CONF" EntitySet="TC_SD_CAT_CONF" />
+      <End Role="TC_SD_EKPI_INFO" EntitySet="TC_SD_EKPI_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_IT_REFERENCE_TC_SD_CA" Association="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_CA">
+      <End Role="TC_SD_CAT_CONF" EntitySet="TC_SD_CAT_CONF" />
+      <End Role="TC_TC_SD_ITEM_INFO" EntitySet="TC_TC_SD_ITEM_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_CP_REFERENCE_TC_SD_CP" Association="KPIModel.FK_TC_SD_CP_REFERENCE_TC_SD_CP">
+      <End Role="TC_SD_CPATS" EntitySet="TC_SD_CPATS" />
+      <End Role="TC_SD_CPAT_DETAIL" EntitySet="TC_SD_CPAT_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_CP_REFERENCE_TC_SD_FI" Association="KPIModel.FK_TC_SD_CP_REFERENCE_TC_SD_FI">
+      <End Role="TC_SD_FILTER_INFO" EntitySet="TC_SD_FILTER_INFO" />
+      <End Role="TC_SD_CPATS" EntitySet="TC_SD_CPATS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_EP_REFERENCE_TC_SD_CP" Association="KPIModel.FK_TC_SD_EP_REFERENCE_TC_SD_CP">
+      <End Role="TC_SD_CPATS" EntitySet="TC_SD_CPATS" />
+      <End Role="TC_SD_EPKI_VALUE" EntitySet="TC_SD_EPKI_VALUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_IT_REFERENCE_TO_TC_SD_CP" Association="KPIModel.FK_TC_SD_IT_REFERENCE_TO_TC_SD_CP">
+      <End Role="TC_SD_CPATS" EntitySet="TC_SD_CPATS" />
+      <End Role="TC_SD_ITEM_VALUE" EntitySet="TC_SD_ITEM_VALUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_EK_REFERENCE_TO_TC_SD_EK" Association="KPIModel.FK_TC_SD_EK_REFERENCE_TO_TC_SD_EK">
+      <End Role="TC_SD_EKPI_INFO" EntitySet="TC_SD_EKPI_INFO" />
+      <End Role="TC_SD_EKPI_FORMULA" EntitySet="TC_SD_EKPI_FORMULA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_EK_REFERENCE_TC_SD_EK" Association="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_EK">
+      <End Role="TC_SD_EKPI_INFO" EntitySet="TC_SD_EKPI_INFO" />
+      <End Role="TC_SD_EKPI_PARAM" EntitySet="TC_SD_EKPI_PARAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_EK_REFERENCE_TC_SD_IN" Association="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_IN">
+      <End Role="TC_SD_INFO" EntitySet="TC_SD_INFO" />
+      <End Role="TC_SD_EKPI_INFO" EntitySet="TC_SD_EKPI_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_EP_REFERENCE_TC_SD_EK" Association="KPIModel.FK_TC_SD_EP_REFERENCE_TC_SD_EK">
+      <End Role="TC_SD_EKPI_INFO" EntitySet="TC_SD_EKPI_INFO" />
+      <End Role="TC_SD_EPKI_VALUE" EntitySet="TC_SD_EPKI_VALUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_EK_REFERENCE_TC_SD_IT" Association="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_IT">
+      <End Role="TC_TC_SD_ITEM_INFO" EntitySet="TC_TC_SD_ITEM_INFO" />
+      <End Role="TC_SD_EKPI_PARAM" EntitySet="TC_SD_EKPI_PARAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_ER_REFERENCE_TC_SD_IN" Association="KPIModel.FK_TC_SD_ER_REFERENCE_TC_SD_IN">
+      <End Role="TC_SD_INFO" EntitySet="TC_SD_INFO" />
+      <End Role="TC_SD_ERROR_LOG" EntitySet="TC_SD_ERROR_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_FI_REFERENCE_TC_SD_IN" Association="KPIModel.FK_TC_SD_FI_REFERENCE_TC_SD_IN">
+      <End Role="TC_SD_INFO" EntitySet="TC_SD_INFO" />
+      <End Role="TC_SD_FILTER_INFO" EntitySet="TC_SD_FILTER_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_IT_REFERENCE_TC_SD_IN" Association="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_IN">
+      <End Role="TC_SD_INFO" EntitySet="TC_SD_INFO" />
+      <End Role="TC_TC_SD_ITEM_INFO" EntitySet="TC_TC_SD_ITEM_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_PR_REFERENCE_TC_SD_IN" Association="KPIModel.FK_TC_SD_PR_REFERENCE_TC_SD_IN">
+      <End Role="TC_SD_INFO" EntitySet="TC_SD_INFO" />
+      <End Role="TC_SD_PROC_LOG" EntitySet="TC_SD_PROC_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_IT_REFERENCE_TC_SD_IT" Association="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_IT">
+      <End Role="TC_TC_SD_ITEM_INFO" EntitySet="TC_TC_SD_ITEM_INFO" />
+      <End Role="TC_SD_ITEM_DEP" EntitySet="TC_SD_ITEM_DEP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TC_SD_IT_REFERENCE_TO_TC_SD_IT" Association="KPIModel.FK_TC_SD_IT_REFERENCE_TO_TC_SD_IT">
+      <End Role="TC_TC_SD_ITEM_INFO" EntitySet="TC_TC_SD_ITEM_INFO" />
+      <End Role="TC_SD_ITEM_VALUE" EntitySet="TC_SD_ITEM_VALUE" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EP_KPI_PARAM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="KPI_ID" Type="Int32" />
+    <Property Name="KPI_PARAM_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SD_ITEM_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EP_KPI_SET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="KPI_DESC" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_FORMULA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FRA_FORMULA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="INVALID_FLAG" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <Property Name="KPI_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TC_DB_CONF">
+    <Key>
+      <PropertyRef Name="DB_CONF_ID" />
+    </Key>
+    <Property Name="DB_CONF_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_PROJ_ID" Type="Int32" />
+    <Property Name="DB_CONF_TYPE" Type="Int32" />
+    <Property Name="SERVER_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DB_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DB_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DB_PWD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_PROJECT" Relationship="KPIModel.FK_TC_DB_CO_REFERENCE_TC_PROJE" FromRole="TC_DB_CONF" ToRole="TC_PROJECT" />
+  </EntityType>
+  <EntityType Name="TC_PROJECT">
+    <Key>
+      <PropertyRef Name="TC_PROJ_ID" />
+    </Key>
+    <Property Name="TC_PROJ_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_PROJ_NAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IS_COMMON" Type="Int32" />
+    <Property Name="TC_PROJ_TYPE" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_DB_CONF" Relationship="KPIModel.FK_TC_DB_CO_REFERENCE_TC_PROJE" FromRole="TC_PROJECT" ToRole="TC_DB_CONF" />
+    <NavigationProperty Name="TC_SD_INFO" Relationship="KPIModel.FK_TC_SD_IN_REFERENCE_TC_PROJE" FromRole="TC_PROJECT" ToRole="TC_SD_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_CAT_CONF">
+    <Key>
+      <PropertyRef Name="CAT_ID" />
+    </Key>
+    <Property Name="CAT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CAT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_TYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_TYPE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_PA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_PA_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_SUB_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_SUB_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_EKPI_INFO" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_CA" FromRole="TC_SD_CAT_CONF" ToRole="TC_SD_EKPI_INFO" />
+    <NavigationProperty Name="TC_TC_SD_ITEM_INFO" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_CA" FromRole="TC_SD_CAT_CONF" ToRole="TC_TC_SD_ITEM_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_CPAT_DETAIL">
+    <Key>
+      <PropertyRef Name="DETAIL_ID" />
+    </Key>
+    <Property Name="DETAIL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_FILTER_ID" Type="Int32" />
+    <Property Name="SD_CPAT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IN_FLAG" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BASE_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_CPATS" Relationship="KPIModel.FK_TC_SD_CP_REFERENCE_TC_SD_CP" FromRole="TC_SD_CPAT_DETAIL" ToRole="TC_SD_CPATS" />
+  </EntityType>
+  <EntityType Name="TC_SD_CPATS">
+    <Key>
+      <PropertyRef Name="SD_FILTER_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_FILTER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_CPAT_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_CPAT_DETAIL" Relationship="KPIModel.FK_TC_SD_CP_REFERENCE_TC_SD_CP" FromRole="TC_SD_CPATS" ToRole="TC_SD_CPAT_DETAIL" />
+    <NavigationProperty Name="TC_SD_FILTER_INFO" Relationship="KPIModel.FK_TC_SD_CP_REFERENCE_TC_SD_FI" FromRole="TC_SD_CPATS" ToRole="TC_SD_FILTER_INFO" />
+    <NavigationProperty Name="TC_SD_EPKI_VALUE" Relationship="KPIModel.FK_TC_SD_EP_REFERENCE_TC_SD_CP" FromRole="TC_SD_CPATS" ToRole="TC_SD_EPKI_VALUE" />
+    <NavigationProperty Name="TC_SD_ITEM_VALUE" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TO_TC_SD_CP" FromRole="TC_SD_CPATS" ToRole="TC_SD_ITEM_VALUE" />
+  </EntityType>
+  <EntityType Name="TC_SD_EKPI_FORMULA">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="Int32" Nullable="false" />
+    <Property Name="NUM_FORMULA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FRA_FORMULA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_EKPI_INFO" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TO_TC_SD_EK" FromRole="TC_SD_EKPI_FORMULA" ToRole="TC_SD_EKPI_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_EKPI_INFO">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="SD_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_EKPI_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_EKPI_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SD_EKPI_ALIAS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="SD_EKPI_CAT" Type="Int32" />
+    <Property Name="IS_POSITIVE" Type="Int32" />
+    <Property Name="SD_EKPI_ALGO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VALID_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_CAT_CONF" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_CA" FromRole="TC_SD_EKPI_INFO" ToRole="TC_SD_CAT_CONF" />
+    <NavigationProperty Name="TC_SD_EKPI_FORMULA" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TO_TC_SD_EK" FromRole="TC_SD_EKPI_INFO" ToRole="TC_SD_EKPI_FORMULA" />
+    <NavigationProperty Name="TC_SD_EKPI_PARAM" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_EK" FromRole="TC_SD_EKPI_INFO" ToRole="TC_SD_EKPI_PARAM" />
+    <NavigationProperty Name="TC_SD_INFO" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_IN" FromRole="TC_SD_EKPI_INFO" ToRole="TC_SD_INFO" />
+    <NavigationProperty Name="TC_SD_EPKI_VALUE" Relationship="KPIModel.FK_TC_SD_EP_REFERENCE_TC_SD_EK" FromRole="TC_SD_EKPI_INFO" ToRole="TC_SD_EPKI_VALUE" />
+  </EntityType>
+  <EntityType Name="TC_SD_EKPI_PARAM">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+      <PropertyRef Name="SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_EKPI_PARAM_NAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_EKPI_INFO" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_EK" FromRole="TC_SD_EKPI_PARAM" ToRole="TC_SD_EKPI_INFO" />
+    <NavigationProperty Name="TC_TC_SD_ITEM_INFO" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_IT" FromRole="TC_SD_EKPI_PARAM" ToRole="TC_TC_SD_ITEM_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_EPKI_VALUE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_EKPI_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_FILTER_ID" Type="Int32" />
+    <Property Name="INDEX_VALUE" Type="Int32" Nullable="false" />
+    <Property Name="RSN_FLAG" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_CPATS" Relationship="KPIModel.FK_TC_SD_EP_REFERENCE_TC_SD_CP" FromRole="TC_SD_EPKI_VALUE" ToRole="TC_SD_CPATS" />
+    <NavigationProperty Name="TC_SD_EKPI_INFO" Relationship="KPIModel.FK_TC_SD_EP_REFERENCE_TC_SD_EK" FromRole="TC_SD_EPKI_VALUE" ToRole="TC_SD_EKPI_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_ERROR_LOG">
+    <Key>
+      <PropertyRef Name="ERROR_LOG_ID" />
+    </Key>
+    <Property Name="ERROR_LOG_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="PROC_TYPE" Type="Int32" />
+    <Property Name="PROC_URL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DLL_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CLASS_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FUNC_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ERR_CONTENT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_INFO" Relationship="KPIModel.FK_TC_SD_ER_REFERENCE_TC_SD_IN" FromRole="TC_SD_ERROR_LOG" ToRole="TC_SD_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_FILTER_INFO">
+    <Key>
+      <PropertyRef Name="SD_FILTER_ID" />
+    </Key>
+    <Property Name="SD_FILTER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_FILTER_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_FILTER_NAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="SD_FILTER_ALGO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VALID_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_CPATS" Relationship="KPIModel.FK_TC_SD_CP_REFERENCE_TC_SD_FI" FromRole="TC_SD_FILTER_INFO" ToRole="TC_SD_CPATS" />
+    <NavigationProperty Name="TC_SD_INFO" Relationship="KPIModel.FK_TC_SD_FI_REFERENCE_TC_SD_IN" FromRole="TC_SD_FILTER_INFO" ToRole="TC_SD_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_INFO">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+    </Key>
+    <Property Name="SD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_PROJ_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_NAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ALIAS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_CAT_PA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CITEM_CAT_PA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EKPI_CAT_PA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="VALID_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_PROJECT" Relationship="KPIModel.FK_TC_SD_IN_REFERENCE_TC_PROJE" FromRole="TC_SD_INFO" ToRole="TC_PROJECT" />
+    <NavigationProperty Name="TC_SD_EKPI_INFO" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_IN" FromRole="TC_SD_INFO" ToRole="TC_SD_EKPI_INFO" />
+    <NavigationProperty Name="TC_SD_ERROR_LOG" Relationship="KPIModel.FK_TC_SD_ER_REFERENCE_TC_SD_IN" FromRole="TC_SD_INFO" ToRole="TC_SD_ERROR_LOG" />
+    <NavigationProperty Name="TC_SD_FILTER_INFO" Relationship="KPIModel.FK_TC_SD_FI_REFERENCE_TC_SD_IN" FromRole="TC_SD_INFO" ToRole="TC_SD_FILTER_INFO" />
+    <NavigationProperty Name="TC_TC_SD_ITEM_INFO" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_IN" FromRole="TC_SD_INFO" ToRole="TC_TC_SD_ITEM_INFO" />
+    <NavigationProperty Name="TC_SD_PROC_LOG" Relationship="KPIModel.FK_TC_SD_PR_REFERENCE_TC_SD_IN" FromRole="TC_SD_INFO" ToRole="TC_SD_PROC_LOG" />
+  </EntityType>
+  <EntityType Name="TC_SD_ITEM_DEP">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+      <PropertyRef Name="DEP_SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEP_SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_TC_SD_ITEM_INFO" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_IT" FromRole="TC_SD_ITEM_DEP" ToRole="TC_TC_SD_ITEM_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_ITEM_INFO">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_ALIAS" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_ITEM_DATA_TYPE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_PRECISION" Type="Int32" />
+    <Property Name="SD_ITEM_SRC" Type="Int32" Nullable="false" />
+    <Property Name="IS_RESULT" Type="Int32" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="SD_ITEM_ALGO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VALID_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_CAT_CONF" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_CA" FromRole="TC_TC_SD_ITEM_INFO" ToRole="TC_SD_CAT_CONF" />
+    <NavigationProperty Name="TC_SD_EKPI_PARAM" Relationship="KPIModel.FK_TC_SD_EK_REFERENCE_TC_SD_IT" FromRole="TC_TC_SD_ITEM_INFO" ToRole="TC_SD_EKPI_PARAM" />
+    <NavigationProperty Name="TC_SD_INFO" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_IN" FromRole="TC_TC_SD_ITEM_INFO" ToRole="TC_SD_INFO" />
+    <NavigationProperty Name="TC_SD_ITEM_DEP" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TC_SD_IT" FromRole="TC_TC_SD_ITEM_INFO" ToRole="TC_SD_ITEM_DEP" />
+    <NavigationProperty Name="TC_SD_ITEM_VALUE" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TO_TC_SD_IT" FromRole="TC_TC_SD_ITEM_INFO" ToRole="TC_SD_ITEM_VALUE" />
+  </EntityType>
+  <EntityType Name="TC_SD_ITEM_OPTION">
+    <Key>
+      <PropertyRef Name="ITEM_OPTION_ID" />
+    </Key>
+    <Property Name="ITEM_OPTION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="ITEM_OPTION_NAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TC_SD_ITEM_VALUE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ITEM_ID" Type="Int32" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="SD_CPAT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_FILTER_ID" Type="Int32" />
+    <Property Name="SD_ITEM_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_CPATS" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TO_TC_SD_CP" FromRole="TC_SD_ITEM_VALUE" ToRole="TC_SD_CPATS" />
+    <NavigationProperty Name="TC_TC_SD_ITEM_INFO" Relationship="KPIModel.FK_TC_SD_IT_REFERENCE_TO_TC_SD_IT" FromRole="TC_SD_ITEM_VALUE" ToRole="TC_TC_SD_ITEM_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_PROC_LOG">
+    <Key>
+      <PropertyRef Name="PROC_LOG_ID" />
+    </Key>
+    <Property Name="PROC_LOG_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="PROC_CAT_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_CONTENT_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TC_SD_INFO" Relationship="KPIModel.FK_TC_SD_PR_REFERENCE_TC_SD_IN" FromRole="TC_SD_PROC_LOG" ToRole="TC_SD_INFO" />
+  </EntityType>
+  <EntityType Name="TC_SD_PROC_STAT">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+      <PropertyRef Name="PROC_CAT_CODE" />
+      <PropertyRef Name="PROC_CONTENT_ID" />
+    </Key>
+    <Property Name="SD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROC_CAT_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_CONTENT_ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_STAT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_TC_DB_CO_REFERENCE_TC_PROJE">
+    <End Type="KPIModel.TC_PROJECT" Role="TC_PROJECT" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_DB_CONF" Role="TC_DB_CONF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_PROJECT">
+        <PropertyRef Name="TC_PROJ_ID" />
+      </Principal>
+      <Dependent Role="TC_DB_CONF">
+        <PropertyRef Name="TC_PROJ_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_IN_REFERENCE_TC_PROJE">
+    <End Type="KPIModel.TC_PROJECT" Role="TC_PROJECT" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_INFO" Role="TC_SD_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_PROJECT">
+        <PropertyRef Name="TC_PROJ_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_INFO">
+        <PropertyRef Name="TC_PROJ_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_EK_REFERENCE_TC_SD_CA">
+    <End Type="KPIModel.TC_SD_CAT_CONF" Role="TC_SD_CAT_CONF" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_EKPI_INFO" Role="TC_SD_EKPI_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_CAT_CONF">
+        <PropertyRef Name="CAT_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_EKPI_INFO">
+        <PropertyRef Name="SD_EKPI_CAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_IT_REFERENCE_TC_SD_CA">
+    <End Type="KPIModel.TC_SD_CAT_CONF" Role="TC_SD_CAT_CONF" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_ITEM_INFO" Role="TC_TC_SD_ITEM_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_CAT_CONF">
+        <PropertyRef Name="CAT_ID" />
+      </Principal>
+      <Dependent Role="TC_TC_SD_ITEM_INFO">
+        <PropertyRef Name="SD_ITEM_CAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_CP_REFERENCE_TC_SD_CP">
+    <End Type="KPIModel.TC_SD_CPATS" Role="TC_SD_CPATS" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_CPAT_DETAIL" Role="TC_SD_CPAT_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_CPATS">
+        <PropertyRef Name="SD_CPAT_NO" />
+        <PropertyRef Name="SD_FILTER_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_CPAT_DETAIL">
+        <PropertyRef Name="SD_CPAT_NO" />
+        <PropertyRef Name="SD_FILTER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_CP_REFERENCE_TC_SD_FI">
+    <End Type="KPIModel.TC_SD_FILTER_INFO" Role="TC_SD_FILTER_INFO" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_CPATS" Role="TC_SD_CPATS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_FILTER_INFO">
+        <PropertyRef Name="SD_FILTER_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_CPATS">
+        <PropertyRef Name="SD_FILTER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_EP_REFERENCE_TC_SD_CP">
+    <End Type="KPIModel.TC_SD_CPATS" Role="TC_SD_CPATS" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_EPKI_VALUE" Role="TC_SD_EPKI_VALUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_CPATS">
+        <PropertyRef Name="SD_CPAT_NO" />
+        <PropertyRef Name="SD_FILTER_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_EPKI_VALUE">
+        <PropertyRef Name="SD_CPAT_NO" />
+        <PropertyRef Name="SD_FILTER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_IT_REFERENCE_TO_TC_SD_CP">
+    <End Type="KPIModel.TC_SD_CPATS" Role="TC_SD_CPATS" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_ITEM_VALUE" Role="TC_SD_ITEM_VALUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_CPATS">
+        <PropertyRef Name="SD_CPAT_NO" />
+        <PropertyRef Name="SD_FILTER_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_ITEM_VALUE">
+        <PropertyRef Name="SD_CPAT_NO" />
+        <PropertyRef Name="SD_FILTER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_EK_REFERENCE_TO_TC_SD_EK">
+    <End Type="KPIModel.TC_SD_EKPI_INFO" Role="TC_SD_EKPI_INFO" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_EKPI_FORMULA" Role="TC_SD_EKPI_FORMULA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_EKPI_INFO">
+        <PropertyRef Name="SD_EKPI_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_EKPI_FORMULA">
+        <PropertyRef Name="SD_EKPI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_EK_REFERENCE_TC_SD_EK">
+    <End Type="KPIModel.TC_SD_EKPI_INFO" Role="TC_SD_EKPI_INFO" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_EKPI_PARAM" Role="TC_SD_EKPI_PARAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_EKPI_INFO">
+        <PropertyRef Name="SD_EKPI_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_EKPI_PARAM">
+        <PropertyRef Name="SD_EKPI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_EK_REFERENCE_TC_SD_IN">
+    <End Type="KPIModel.TC_SD_INFO" Role="TC_SD_INFO" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_EKPI_INFO" Role="TC_SD_EKPI_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_INFO">
+        <PropertyRef Name="SD_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_EKPI_INFO">
+        <PropertyRef Name="SD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_EP_REFERENCE_TC_SD_EK">
+    <End Type="KPIModel.TC_SD_EKPI_INFO" Role="TC_SD_EKPI_INFO" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_EPKI_VALUE" Role="TC_SD_EPKI_VALUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_EKPI_INFO">
+        <PropertyRef Name="SD_EKPI_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_EPKI_VALUE">
+        <PropertyRef Name="SD_EKPI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_EK_REFERENCE_TC_SD_IT">
+    <End Type="KPIModel.TC_SD_ITEM_INFO" Role="TC_TC_SD_ITEM_INFO" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_EKPI_PARAM" Role="TC_SD_EKPI_PARAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_TC_SD_ITEM_INFO">
+        <PropertyRef Name="SD_ITEM_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_EKPI_PARAM">
+        <PropertyRef Name="SD_ITEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_ER_REFERENCE_TC_SD_IN">
+    <End Type="KPIModel.TC_SD_INFO" Role="TC_SD_INFO" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_ERROR_LOG" Role="TC_SD_ERROR_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_INFO">
+        <PropertyRef Name="SD_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_ERROR_LOG">
+        <PropertyRef Name="SD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_FI_REFERENCE_TC_SD_IN">
+    <End Type="KPIModel.TC_SD_INFO" Role="TC_SD_INFO" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_FILTER_INFO" Role="TC_SD_FILTER_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_INFO">
+        <PropertyRef Name="SD_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_FILTER_INFO">
+        <PropertyRef Name="SD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_IT_REFERENCE_TC_SD_IN">
+    <End Type="KPIModel.TC_SD_INFO" Role="TC_SD_INFO" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_ITEM_INFO" Role="TC_TC_SD_ITEM_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_INFO">
+        <PropertyRef Name="SD_ID" />
+      </Principal>
+      <Dependent Role="TC_TC_SD_ITEM_INFO">
+        <PropertyRef Name="SD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_PR_REFERENCE_TC_SD_IN">
+    <End Type="KPIModel.TC_SD_INFO" Role="TC_SD_INFO" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_PROC_LOG" Role="TC_SD_PROC_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_SD_INFO">
+        <PropertyRef Name="SD_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_PROC_LOG">
+        <PropertyRef Name="SD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_IT_REFERENCE_TC_SD_IT">
+    <End Type="KPIModel.TC_SD_ITEM_INFO" Role="TC_TC_SD_ITEM_INFO" Multiplicity="1" />
+    <End Type="KPIModel.TC_SD_ITEM_DEP" Role="TC_SD_ITEM_DEP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_TC_SD_ITEM_INFO">
+        <PropertyRef Name="SD_ITEM_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_ITEM_DEP">
+        <PropertyRef Name="SD_ITEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TC_SD_IT_REFERENCE_TO_TC_SD_IT">
+    <End Type="KPIModel.TC_SD_ITEM_INFO" Role="TC_TC_SD_ITEM_INFO" Multiplicity="0..1" />
+    <End Type="KPIModel.TC_SD_ITEM_VALUE" Role="TC_SD_ITEM_VALUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TC_TC_SD_ITEM_INFO">
+        <PropertyRef Name="SD_ITEM_ID" />
+      </Principal>
+      <Dependent Role="TC_SD_ITEM_VALUE">
+        <PropertyRef Name="SD_ITEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

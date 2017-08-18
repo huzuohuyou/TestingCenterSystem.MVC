@@ -1,0 +1,11 @@
+ 发生时间：2017-08-07 08:58:35.1263
+ 日志级别：ERROR
+ 操作账号：
+ 操作者IP：
+ IP归属地：
+ 浏 览 器：
+ 操作模块：
+ 提示信息：   在 Elight.Web.Filters.AuthorizeCheckedAttribute.OnAuthorization(AuthorizationContext filterContext) 位置 D:\CDSVN\00.共通框架\02.源代码3.0\TestingCenterSystem.MVC\project\Elight.Web\Filters\AuthorizeCheckedAttribute.cs:行号 33
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+

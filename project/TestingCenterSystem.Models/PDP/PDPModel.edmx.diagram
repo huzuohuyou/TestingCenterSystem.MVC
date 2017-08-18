@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="542fdc43fd9c4926b8d0536723b2b412" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.PDP_DB_CONF" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.PDP_ERROR_LOG" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.PDP_PROC_LOG" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.PDP_PROC_STAT" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.PDP_PROJECT" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_CAT_CONF" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_CPAT_DETAIL" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_CPATS" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_EKPI_FORMULA" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_EKPI_INFO" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_EKPI_PARAM" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_EPKI_VALUE" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_FILTER_INFO" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_INFO" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_ITEM_DEP" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_ITEM_INFO" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.SD_ITEM_OPTION" Width="1.5" PointX="10.75" PointY="5.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.PDP.PDP_SD_ITEM_VALUE" Width="1.875" PointX="10.75" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

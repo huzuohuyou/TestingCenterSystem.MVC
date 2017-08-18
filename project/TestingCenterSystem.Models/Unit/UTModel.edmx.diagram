@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c94203b2de0d450fad986ecb4dae27d8" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_SD_CPAT_DETAIL" Width="1.5" PointX="7.25" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_CHECK_RECORD" Width="1.5" PointX="2.625" PointY="1.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_DICT_CHECKTEST" Width="1.5" PointX="4.875" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_DICT_DEPT" Width="1.5" PointX="2.875" PointY="2.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_DICT_DIAG" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_DICT_DRUG" Width="1.5" PointX="4.875" PointY="4.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_DICT_EMPLOYEE" Width="1.5" PointX="0.625" PointY="3.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_EMR_RECORD" Width="1.5" PointX="4.875" PointY="2.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_IN_ORDERS" Width="1.5" PointX="5" PointY="4.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_IN_PATIENT" Width="1.5" PointX="4.875" PointY="3.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_OUT_EMR" Width="1.5" PointX="0.625" PointY="5.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_OUT_PATIENT" Width="1.5" PointX="2.625" PointY="5.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_OUT_RECIPE" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_PATHOLOGY_RECORD" Width="1.5" PointX="0.625" PointY="4.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_TEST_RECORD" Width="1.5" PointX="2.75" PointY="3.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_TEST_RESULT" Width="1.5" PointX="2.875" PointY="4.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_TEST_RESULT_GERM" Width="1.5" PointX="0.625" PointY="5.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_SD_EPKI_VALUE" Width="1.5" PointX="4.875" PointY="5.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_SD_CPATS" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_SD_ITEM_VALUE" Width="1.875" PointX="7.375" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_COM_DICT_DETAIL" Width="1.5" PointX="9.375" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_COM_DICT_MASTER" Width="1.5" PointX="9.375" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_ANESTHESIA_RECORD" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_CONSULT_RECORD" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_DIAGNOSIS" Width="1.5" PointX="10.375" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_INFECTION_RECORD" Width="1.5" PointX="7.375" PointY="10.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_OPERATION_RECORD" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_TRANS_RECORD" Width="1.5" PointX="11.375" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_ASSESSMENT_RECORD" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_MEDICAL_RECORD" Width="1.5" PointX="11.75" PointY="10.75" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_CPAT_NURSE_RECORD" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="TestingCenterSystem.Models.UTModel.UN_PDP_PROJECT" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,752 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestingCenterSystem.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CPAT_CHECK_RECORD">
+    <Key>
+      <PropertyRef Name="CHECK_ID" />
+    </Key>
+    <Property Name="CHECK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IN_FLAG" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLINIC_CODE" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="MO_CHECK_NO" Type="varchar" MaxLength="60" />
+    <Property Name="APPLY_NO" Type="varchar" MaxLength="60" />
+    <Property Name="CHK_SYSTEM_CODE" Type="int" />
+    <Property Name="CHECK_TYPE" Type="varchar" MaxLength="20" />
+    <Property Name="CHECK_ITEM_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CHECK_ITEM_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="APPLY_DATE" Type="datetime" />
+    <Property Name="APPLY_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="APPLY_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="RECEIVE_DATE" Type="datetime" />
+    <Property Name="CHECK_DATE" Type="datetime" />
+    <Property Name="EXEC_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="EXEC_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="BODY_PART_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="CHECK_RESULT_TYPE" Type="varchar" MaxLength="200" />
+    <Property Name="REPORT_OBJECTIVE" Type="text" />
+    <Property Name="REPORT_SUBJECTIVE" Type="text" />
+    <Property Name="REPORT_RESULT" Type="text" />
+    <Property Name="REPORT_DATE" Type="datetime" />
+    <Property Name="REPORT_DOCTOR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_DICT_CHECKTEST">
+    <Key>
+      <PropertyRef Name="DICT_ITEM_ID" />
+    </Key>
+    <Property Name="DICT_ITEM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CHK_CAT_CODE" Type="int" />
+    <Property Name="ITEM_LIST_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="ITEM_LIST_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ITEM_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="ITEM_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ITEM_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_DICT_DEPT">
+    <Key>
+      <PropertyRef Name="DEPT_CODE" />
+    </Key>
+    <Property Name="DEPT_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="PARENT_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_DICT_DETAIL">
+    <Key>
+      <PropertyRef Name="DP_CLASS_CODE" />
+      <PropertyRef Name="DP_ITEM_CODE" />
+    </Key>
+    <Property Name="DP_CLASS_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DP_ITEM_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DP_ITEM_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ORDER_NO" Type="int" />
+    <Property Name="MEMO" Type="varchar" MaxLength="500" />
+    <Property Name="ATTR" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="CPAT_DICT_DIAG">
+    <Key>
+      <PropertyRef Name="DIAG_CODE" />
+    </Key>
+    <Property Name="DIAG_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DIAG_ICD" Type="varchar" MaxLength="60" />
+    <Property Name="DIAG_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_DICT_DRUG">
+    <Key>
+      <PropertyRef Name="DRUG_CODE" />
+    </Key>
+    <Property Name="DRUG_CODE" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="DRUG_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="GENERIC_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="GOODS_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="OTHER_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="CATEGORY" Type="varchar" MaxLength="20" />
+    <Property Name="QUALITY" Type="varchar" MaxLength="60" />
+    <Property Name="DOSAGE" Type="varchar" MaxLength="60" />
+    <Property Name="SPECS" Type="varchar" MaxLength="60" />
+    <Property Name="MIN_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="PACK_SPECS" Type="varchar" MaxLength="60" />
+    <Property Name="PACK_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="USAGE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="FREQ_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="BASE_DOSE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BASE_DOSE_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="OCT_FLAG" Type="int" />
+    <Property Name="PRODUCING_AREA" Type="varchar" MaxLength="200" />
+    <Property Name="PRODUCER_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_DICT_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMP_CODE" />
+    </Key>
+    <Property Name="EMP_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EMP_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="EMP_UID" Type="varchar" MaxLength="20" />
+    <Property Name="EMP_PWD" Type="varchar" MaxLength="60" />
+    <Property Name="BIRTH_DATE" Type="datetime" />
+    <Property Name="PHONE" Type="varchar" MaxLength="20" />
+    <Property Name="TITLE" Type="varchar" MaxLength="60" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6013: 表/视图“HJ.PDP.dbo.CPAT_DICT_EMPLOYEE_DEPT”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="CPAT_DICT_EMPLOYEE_DEPT">
+          <Property Name="EMP_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="DEPT_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="EMP_DEPT_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="IN_DEPT_DATE" Type="datetime" />
+          <Property Name="OUT_DEPT_DATE" Type="datetime" />
+          <Property Name="UPD_DATE" Type="datetime" />
+        </EntityType>-->
+  <EntityType Name="CPAT_DICT_MASTER">
+    <Key>
+      <PropertyRef Name="CLASS_CODE" />
+    </Key>
+    <Property Name="CLASS_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLASS_NAME" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="ORDER_NO" Type="int" />
+    <Property Name="MEMO" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CPAT_EMR_RECORD">
+    <Key>
+      <PropertyRef Name="EMR_REC_ID" />
+    </Key>
+    <Property Name="EMR_REC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="EMR_TYPE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="EMR_TYPE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="LGCY_TYPE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="LGCY_TYPE_NAME" Type="varchar" MaxLength="1000" />
+    <Property Name="LGCY_SUB_TYPE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="LGCY_SUB_TYPE_NAME" Type="varchar" MaxLength="1000" />
+    <Property Name="REC_CONTENT" Type="text" />
+    <Property Name="REC_CONTENT_FM" Type="text" />
+    <Property Name="REC_TYPE" Type="int" />
+    <Property Name="CREATOR_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CREATOR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="REC_PSN_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="REC_PSN_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="REC_DATE" Type="datetime" />
+    <Property Name="REC_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="REC_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="PARENT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="PARENT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="DIRECTOR_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="DIRECTOR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_IN_ORDERS">
+    <Key>
+      <PropertyRef Name="MO_ORDER_NO" />
+    </Key>
+    <Property Name="MO_ORDER_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="APPLY_NO" Type="varchar" MaxLength="60" />
+    <Property Name="MO_DATE" Type="datetime" />
+    <Property Name="DATE_BEGIN" Type="datetime" />
+    <Property Name="DATE_END" Type="datetime" />
+    <Property Name="ORDER_TYPE_CODE" Type="int" />
+    <Property Name="ORDER_ITEM_CODE" Type="varchar" MaxLength="60" />
+    <Property Name="ORDER_ITEM_NAME" Type="varchar" MaxLength="1000" />
+    <Property Name="LONG_FLAG" Type="int" />
+    <Property Name="OUT_DRUG_FLAG" Type="int" />
+    <Property Name="DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="DOCTOR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="STOP_DOCTOR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ITEM_GOODS_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="GYTJ_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="GYTJ_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="USAGE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="USAGE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="FREQ_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="FREQ_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="DOSE_ONCE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DOSE_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="QTY_TOT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="QTY_TOT_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="CHN_MEDI_QTY" Type="int" />
+    <Property Name="USE_INTENDED_CODE" Type="int" />
+    <Property Name="EXEC_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="EXEC_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="EXEC_PERSON" Type="varchar" MaxLength="60" />
+    <Property Name="EXEC_DATE" Type="datetime" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_IN_PATIENT">
+    <Key>
+      <PropertyRef Name="PATIENT_NO" />
+    </Key>
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="IN_TIMES" Type="int" />
+    <Property Name="CASE_NO" Type="varchar" MaxLength="60" />
+    <Property Name="CARD_NO" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ID_NO" Type="varchar" MaxLength="60" />
+    <Property Name="BIRTH_DATE" Type="datetime" />
+    <Property Name="GENDER_CODE" Type="int" />
+    <Property Name="COUNTRY_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="NATION_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="MARI_STAT_CODE" Type="int" />
+    <Property Name="CHARGE_TYPE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CHARGE_TYPE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="IN_DATE" Type="datetime" Nullable="false" />
+    <Property Name="OUT_DATE" Type="datetime" Nullable="false" />
+    <Property Name="IN_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="IN_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="AREA_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="AREA_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="OUT_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="OUT_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="IN_DEPT_DATE" Type="datetime" />
+    <Property Name="OUT_DEPT_DATE" Type="datetime" />
+    <Property Name="DOCTOR_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="DOCTOR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="IN_SOURCE_CODE" Type="int" />
+    <Property Name="IN_STATUS_CODE" Type="int" />
+    <Property Name="OUT_WAY_CODE" Type="int" />
+    <Property Name="OUT_STATUS_CODE" Type="int" />
+    <Property Name="IN_DIAG_CODE" Type="varchar" MaxLength="500" />
+    <Property Name="IN_DIAG_NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="OUT_DIAG_CODE" Type="varchar" MaxLength="500" />
+    <Property Name="OUT_DIAG_NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_OUT_EMR">
+    <Key>
+      <PropertyRef Name="EMR_REC_ID" />
+    </Key>
+    <Property Name="EMR_REC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="VISIT_DATE" Type="datetime" />
+    <Property Name="COMPLAINTS" Type="varchar" MaxLength="2000" />
+    <Property Name="CASE_ALLERGY" Type="varchar" MaxLength="1000" />
+    <Property Name="CASE_NOW" Type="varchar" MaxLength="2000" />
+    <Property Name="CASE_OLD" Type="varchar" MaxLength="2000" />
+    <Property Name="FIRST_VISIT_FLAG" Type="int" />
+    <Property Name="PHYSICAL" Type="varchar" MaxLength="2000" />
+    <Property Name="CHECK_ITEM_NAME" Type="varchar" MaxLength="500" />
+    <Property Name="CHECK_RESULT" Type="varchar" MaxLength="1000" />
+    <Property Name="DIAGNOSIS_CODE" Type="varchar" MaxLength="200" />
+    <Property Name="DIAGNOSIS_NAME" Type="varchar" MaxLength="500" />
+    <Property Name="CONTENT" Type="text" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_OUT_PATIENT">
+    <Key>
+      <PropertyRef Name="PATIENT_NO" />
+    </Key>
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IN_FLAG" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="CASE_NO" Type="varchar" MaxLength="60" />
+    <Property Name="CARD_NO" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ID_NO" Type="varchar" MaxLength="60" />
+    <Property Name="BIRTH_DATE" Type="datetime" />
+    <Property Name="GENDER_CODE" Type="int" />
+    <Property Name="COUNTRY_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="NATION_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="MARI_STAT_CODE" Type="int" />
+    <Property Name="CHARGE_TYPE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CHARGE_TYPE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="REG_DATE" Type="datetime" />
+    <Property Name="REG_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="REG_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="REG_LEVEL_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="REG_LEVEL_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="SEE_NO" Type="varchar" MaxLength="20" />
+    <Property Name="SEE_DATE" Type="datetime" />
+    <Property Name="DOCTOR_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="DOCTOR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="DIAG_CODE" Type="varchar" MaxLength="200" />
+    <Property Name="DIAG_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="DIAG_DATE" Type="datetime" />
+    <Property Name="FIRST_VISIT_FLAG" Type="int" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_OUT_RECIPE">
+    <Key>
+      <PropertyRef Name="RECIPE_ID" />
+    </Key>
+    <Property Name="RECIPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="RECIPE_NO" Type="varchar" MaxLength="60" />
+    <Property Name="APPLY_NO" Type="varchar" MaxLength="60" />
+    <Property Name="RECIPE_DATE" Type="datetime" />
+    <Property Name="RECIPE_TYPE_CODE" Type="int" />
+    <Property Name="ITEM_CODE" Type="varchar" MaxLength="60" />
+    <Property Name="ITEM_NAME" Type="varchar" MaxLength="1000" />
+    <Property Name="DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="DOCTOR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ITEM_GOODS_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="GYTJ_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="GYTJ_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="USAGE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="USAGE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="FREQ_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="FREQ_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="DOSE_ONCE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DOSE_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="QTY_TOT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="QTY_TOT_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="USE_DAYS" Type="varchar" MaxLength="20" />
+    <Property Name="EXEC_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="EXEC_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="EXEC_DATE" Type="datetime" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_PATHOLOGY_RECORD">
+    <Key>
+      <PropertyRef Name="PATHOLOGY_ID" />
+    </Key>
+    <Property Name="PATHOLOGY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IN_FLAG" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLINIC_CODE" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="BIRTH_DATE" Type="datetime" />
+    <Property Name="GENDER_CODE" Type="int" />
+    <Property Name="CASE_NO" Type="varchar" MaxLength="60" />
+    <Property Name="MO_CHECK_NO" Type="varchar" MaxLength="60" />
+    <Property Name="COMPLAINTS" Type="varchar" MaxLength="2000" />
+    <Property Name="DIAGNOSE_NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="MEDICAL_HISTORY" Type="varchar" MaxLength="2000" />
+    <Property Name="APPLY_NO" Type="varchar" MaxLength="60" />
+    <Property Name="APPLY_DATE" Type="datetime" />
+    <Property Name="APPLY_DEPT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="APPLY_DEPT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="APPLY_DOCTOR_NAME" Type="varchar" MaxLength="20" />
+    <Property Name="SAMPLING_DATE" Type="datetime" />
+    <Property Name="SAMPLE_PART" Type="varchar" MaxLength="60" />
+    <Property Name="SAMPLE_TYPE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="RECEIVE_DATE" Type="datetime" />
+    <Property Name="ITEM_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="ITEM_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="CHECK_DOCTOR_NAME" Type="varchar" MaxLength="20" />
+    <Property Name="CHECK_DATE" Type="datetime" />
+    <Property Name="REPORT_OBJECTIVE" Type="text" />
+    <Property Name="REPORT_SUBJECTIVE" Type="text" />
+    <Property Name="REPORT_RESULT" Type="text" />
+    <Property Name="BIOPSY" Type="text" />
+    <Property Name="PATHOLOGY" Type="text" />
+    <Property Name="POSITIVE" Type="varchar" MaxLength="200" />
+    <Property Name="SECTION_COUNT" Type="varchar" MaxLength="20" />
+    <Property Name="FROZEN_RESULT" Type="text" />
+    <Property Name="FROZEN_REPORT_DATE" Type="datetime" />
+    <Property Name="REPORT_DATE_TIME" Type="datetime" />
+    <Property Name="REPORT_DOCTOR_NAME" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_TEST_RECORD">
+    <Key>
+      <PropertyRef Name="SAMPLE_NO" />
+    </Key>
+    <Property Name="SAMPLE_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IN_FLAG" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLINIC_CODE" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="MO_TEST_NO" Type="varchar" MaxLength="60" />
+    <Property Name="APPLY_NO" Type="varchar" MaxLength="60" />
+    <Property Name="GERM_FLAG" Type="int" />
+    <Property Name="TEST_ITEM_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="TEST_ITEM_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="SAMPLE_TYPE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="SAMPLE_TYPE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="SAMPLE_BODY" Type="varchar" MaxLength="200" />
+    <Property Name="APPLY_DEP_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="APPLY_DEP_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="APPLY_DATE" Type="datetime" />
+    <Property Name="SAMPLING_DATE" Type="datetime" />
+    <Property Name="RECEIVE_DATE" Type="datetime" />
+    <Property Name="TEST_DATE" Type="datetime" />
+    <Property Name="REPORT_DATE" Type="datetime" />
+    <Property Name="REPORT_DOCTOR_NAME" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_TEST_RESULT">
+    <Key>
+      <PropertyRef Name="RESULT_ID" />
+    </Key>
+    <Property Name="RESULT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SAMPLE_NO" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IN_FLAG" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLINIC_CODE" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="RESULT_ITEM_CODE" Type="varchar" MaxLength="200" />
+    <Property Name="RESULT_ITEM_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="RESULT_VALUE" Type="varchar" MaxLength="200" />
+    <Property Name="RESULT_UNIT" Type="varchar" MaxLength="60" />
+    <Property Name="REF_RANGE" Type="varchar" MaxLength="200" />
+    <Property Name="MIN_RANGE" Type="varchar" MaxLength="60" />
+    <Property Name="MAX_RANGE" Type="varchar" MaxLength="60" />
+    <Property Name="RESULT_STATUS" Type="varchar" MaxLength="60" />
+    <Property Name="TEST_METHOD_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="TEST_METHOD_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CPAT_TEST_RESULT_GERM">
+    <Key>
+      <PropertyRef Name="GERM_ID" />
+    </Key>
+    <Property Name="GERM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SAMPLE_NO" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IN_FLAG" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLINIC_CODE" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="CULTURE_RESULT" Type="varchar" MaxLength="60" />
+    <Property Name="GERM_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="GERM_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ANTI_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="ANTI_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="NUM_RESULT" Type="varchar" MaxLength="60" />
+    <Property Name="LETTER_RESULT" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PDP_DB_CONF">
+    <Key>
+      <PropertyRef Name="DB_CONF_ID" />
+    </Key>
+    <Property Name="DB_CONF_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_PROJ_ID" Type="int" />
+    <Property Name="DB_CONF_TYPE" Type="int" />
+    <Property Name="SERVER_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="DB_NAME" Type="varchar" MaxLength="20" />
+    <Property Name="DB_USER" Type="varchar" MaxLength="20" />
+    <Property Name="DB_PWD" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PDP_PROJECT">
+    <Key>
+      <PropertyRef Name="TC_PROJ_ID" />
+    </Key>
+    <Property Name="TC_PROJ_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_PROJ_NAME" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IS_COMMON" Type="int" />
+    <Property Name="TC_PROJ_TYPE" Type="int" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PDP_SD_ERROR_LOG">
+    <Key>
+      <PropertyRef Name="ERROR_LOG_ID" />
+    </Key>
+    <Property Name="ERROR_LOG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SD_ID" Type="int" />
+    <Property Name="PROC_TYPE" Type="int" />
+    <Property Name="PROC_URL" Type="varchar" MaxLength="200" />
+    <Property Name="DLL_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="CLASS_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="FUNC_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="ERR_CONTENT" Type="varchar" MaxLength="2000" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PDP_SD_PROC_LOG">
+    <Key>
+      <PropertyRef Name="PROC_LOG_ID" />
+    </Key>
+    <Property Name="PROC_LOG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SD_ID" Type="int" />
+    <Property Name="PROC_CAT_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PROC_CONTENT_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PDP_PDP_SD_PROC_STAT">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+      <PropertyRef Name="PROC_CAT_CODE" />
+      <PropertyRef Name="PROC_CONTENT_ID" />
+    </Key>
+    <Property Name="SD_ID" Type="int" Nullable="false" />
+    <Property Name="PROC_CAT_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PROC_CONTENT_ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PROC_STAT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="50" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_CAT_CONF">
+    <Key>
+      <PropertyRef Name="CAT_ID" />
+    </Key>
+    <Property Name="CAT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CAT_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="CAT_TYPE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CAT_TYPE_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="CAT_PA_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CAT_PA_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="CAT_SUB_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CAT_SUB_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="ORDER_NO" Type="int" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_CPAT_DETAIL">
+    <Key>
+      <PropertyRef Name="DETAIL_ID" />
+    </Key>
+    <Property Name="DETAIL_ID" Type="int" Nullable="false" />
+    <Property Name="SD_FILTER_ID" Type="int" />
+    <Property Name="SD_CPAT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="IN_FLAG" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BASE_FLAG" Type="int" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="IN_DATE" Type="datetime" />
+    <Property Name="OUT_DATE" Type="datetime" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_CPATS">
+    <Key>
+      <PropertyRef Name="SD_FILTER_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_FILTER_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="SD_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_CPAT_DATE" Type="datetime" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_EKPI_FORMULA">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="int" Nullable="false" />
+    <Property Name="NUM_FORMULA" Type="varchar" MaxLength="1000" />
+    <Property Name="FRA_FORMULA" Type="varchar" MaxLength="1000" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_EKPI_INFO">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SD_ID" Type="int" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="SD_EKPI_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="SD_EKPI_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="SD_EKPI_ALIAS" Type="varchar" MaxLength="200" />
+    <Property Name="ORDER_NO" Type="int" />
+    <Property Name="SD_EKPI_CAT" Type="int" />
+    <Property Name="IS_POSITIVE" Type="int" />
+    <Property Name="SD_EKPI_ALGO" Type="varchar(max)" />
+    <Property Name="VALID_FLAG" Type="int" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_EKPI_PARAM">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+      <PropertyRef Name="SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="int" Nullable="false" />
+    <Property Name="SD_ITEM_ID" Type="int" Nullable="false" />
+    <Property Name="SD_EKPI_PARAM_NAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_EPKI_VALUE">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="int" Nullable="false" />
+    <Property Name="SD_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="SD_FILTER_ID" Type="int" />
+    <Property Name="INDEX_VALUE" Type="int" Nullable="false" />
+    <Property Name="RSN_FLAG" Type="int" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_FILTER_INFO">
+    <Key>
+      <PropertyRef Name="SD_FILTER_ID" />
+    </Key>
+    <Property Name="SD_FILTER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SD_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_FILTER_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="SD_FILTER_NAME" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="ORDER_NO" Type="int" />
+    <Property Name="SD_FILTER_ALGO" Type="varchar(max)" />
+    <Property Name="VALID_FLAG" Type="int" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_INFO">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+    </Key>
+    <Property Name="SD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_PROJ_ID" Type="int" Nullable="false" />
+    <Property Name="TC_PROJ_TYPE" Type="int" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_NAME" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="SD_ALIAS" Type="varchar" MaxLength="20" />
+    <Property Name="ITEM_CAT_PA_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="CITEM_CAT_PA_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="EKPI_CAT_PA_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="ORDER_NO" Type="int" />
+    <Property Name="VALID_FLAG" Type="int" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_ITEM_DEP">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+      <PropertyRef Name="DEP_SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="int" Nullable="false" />
+    <Property Name="DEP_SD_ITEM_ID" Type="int" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_ITEM_INFO">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SD_ID" Type="int" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_ITEM_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_ITEM_NAME" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SD_ITEM_ALIAS" Type="varchar" MaxLength="60" />
+    <Property Name="SD_ITEM_CAT_ID" Type="int" Nullable="false" />
+    <Property Name="SD_ITEM_DATA_TYPE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_ITEM_UNIT" Type="varchar" MaxLength="20" />
+    <Property Name="NUM_PRECISION" Type="int" />
+    <Property Name="SD_ITEM_SRC" Type="int" Nullable="false" />
+    <Property Name="IS_RESULT" Type="int" />
+    <Property Name="ORDER_NO" Type="int" />
+    <Property Name="SD_ITEM_ALGO" Type="varchar(max)" />
+    <Property Name="VALID_FLAG" Type="int" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_ITEM_OPTION">
+    <Key>
+      <PropertyRef Name="ITEM_OPTION_ID" />
+    </Key>
+    <Property Name="ITEM_OPTION_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SD_ITEM_ID" Type="int" Nullable="false" />
+    <Property Name="ITEM_OPTION_NAME" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="ORDER_NO" Type="int" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SD_ITEM_VALUE">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="int" Nullable="false" />
+    <Property Name="SD_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="SD_FILTER_ID" Type="int" />
+    <Property Name="ITEM_VALUE" Type="varchar(max)" />
+    <Property Name="LAST_VALUE" Type="varchar(max)" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_DP_DICT__REFERENCE_DP_DICT_">
+    <End Role="CPAT_DICT_MASTER" Type="Self.CPAT_DICT_MASTER" Multiplicity="1" />
+    <End Role="CPAT_DICT_DETAIL" Type="Self.CPAT_DICT_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CPAT_DICT_MASTER">
+        <PropertyRef Name="CLASS_CODE" />
+      </Principal>
+      <Dependent Role="CPAT_DICT_DETAIL">
+        <PropertyRef Name="DP_CLASS_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TestingCenterSystemModelsStoreContainer">
+    <EntitySet Name="CPAT_CHECK_RECORD" EntityType="Self.CPAT_CHECK_RECORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_DICT_CHECKTEST" EntityType="Self.CPAT_DICT_CHECKTEST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_DICT_DEPT" EntityType="Self.CPAT_DICT_DEPT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_DICT_DETAIL" EntityType="Self.CPAT_DICT_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_DICT_DIAG" EntityType="Self.CPAT_DICT_DIAG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_DICT_DRUG" EntityType="Self.CPAT_DICT_DRUG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_DICT_EMPLOYEE" EntityType="Self.CPAT_DICT_EMPLOYEE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_DICT_MASTER" EntityType="Self.CPAT_DICT_MASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_EMR_RECORD" EntityType="Self.CPAT_EMR_RECORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_IN_ORDERS" EntityType="Self.CPAT_IN_ORDERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_IN_PATIENT" EntityType="Self.CPAT_IN_PATIENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_OUT_EMR" EntityType="Self.CPAT_OUT_EMR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_OUT_PATIENT" EntityType="Self.CPAT_OUT_PATIENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_OUT_RECIPE" EntityType="Self.CPAT_OUT_RECIPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_PATHOLOGY_RECORD" EntityType="Self.CPAT_PATHOLOGY_RECORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_TEST_RECORD" EntityType="Self.CPAT_TEST_RECORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_TEST_RESULT" EntityType="Self.CPAT_TEST_RESULT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CPAT_TEST_RESULT_GERM" EntityType="Self.CPAT_TEST_RESULT_GERM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PDP_DB_CONF" EntityType="Self.PDP_DB_CONF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PDP_PROJECT" EntityType="Self.PDP_PROJECT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PDP_SD_ERROR_LOG" EntityType="Self.PDP_SD_ERROR_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PDP_SD_PROC_LOG" EntityType="Self.PDP_SD_PROC_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PDP_PDP_SD_PROC_STAT" EntityType="Self.PDP_PDP_SD_PROC_STAT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_CAT_CONF" EntityType="Self.SD_CAT_CONF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_CPAT_DETAIL" EntityType="Self.SD_CPAT_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_CPATS" EntityType="Self.SD_CPATS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_EKPI_FORMULA" EntityType="Self.SD_EKPI_FORMULA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_EKPI_INFO" EntityType="Self.SD_EKPI_INFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_EKPI_PARAM" EntityType="Self.SD_EKPI_PARAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_EPKI_VALUE" EntityType="Self.SD_EPKI_VALUE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_FILTER_INFO" EntityType="Self.SD_FILTER_INFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_INFO" EntityType="Self.SD_INFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_ITEM_DEP" EntityType="Self.SD_ITEM_DEP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_ITEM_INFO" EntityType="Self.SD_ITEM_INFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_ITEM_OPTION" EntityType="Self.SD_ITEM_OPTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SD_ITEM_VALUE" EntityType="Self.SD_ITEM_VALUE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DP_DICT__REFERENCE_DP_DICT_" Association="Self.FK_DP_DICT__REFERENCE_DP_DICT_">
+      <End Role="CPAT_DICT_MASTER" EntitySet="CPAT_DICT_MASTER" />
+      <End Role="CPAT_DICT_DETAIL" EntitySet="CPAT_DICT_DETAIL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

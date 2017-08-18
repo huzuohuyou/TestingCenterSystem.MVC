@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HJ_GZFE_SDRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CPAT_CHECK_RECORD">
+    <Key>
+      <PropertyRef Name="CHECK_ID" />
+    </Key>
+    <Property Name="CHECK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IN_FLAG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="MO_CHECK_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_CODE" Type="Int32" />
+    <Property Name="CHECK_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CHECK_ITEM_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CHECK_ITEM_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_DATE" Type="DateTime" Precision="3" />
+    <Property Name="APPLY_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="RECEIVE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CHECK_DATE" Type="DateTime" Precision="3" />
+    <Property Name="EXEC_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EXEC_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="BODY_PART_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CHECK_RESULT_TYPE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="REPORT_OBJECTIVE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="REPORT_SUBJECTIVE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="REPORT_RESULT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="REPORT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REPORT_DOCTOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_DIAGNOSIS">
+    <Key>
+      <PropertyRef Name="DIAG_ID" />
+    </Key>
+    <Property Name="DIAG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IN_FLAG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DIAG_TYPE_CODE" Type="Int32" />
+    <Property Name="DIAG_NO" Type="Int32" />
+    <Property Name="DIAG_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DIAG_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DIAG_DATE" Type="DateTime" Precision="3" />
+    <Property Name="TREAT_RESULT" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_EMR_RECORD">
+    <Key>
+      <PropertyRef Name="EMR_REC_ID" />
+    </Key>
+    <Property Name="EMR_REC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EMR_TYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EMR_TYPE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="LGCY_TYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LGCY_TYPE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="LGCY_SUB_TYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LGCY_SUB_TYPE_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="REC_CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="REC_CONTENT_FM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="REC_TYPE" Type="Int32" />
+    <Property Name="CREATOR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREATOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REC_PSN_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="REC_PSN_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="REC_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REC_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="REC_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PARENT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PARENT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECTOR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECTOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_IN_ORDERS">
+    <Key>
+      <PropertyRef Name="MO_ORDER_NO" />
+    </Key>
+    <Property Name="MO_ORDER_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="MO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DATE_BEGIN" Type="DateTime" Precision="3" />
+    <Property Name="DATE_END" Type="DateTime" Precision="3" />
+    <Property Name="ORDER_TYPE_CODE" Type="Int32" />
+    <Property Name="ORDER_ITEM_CODE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_ITEM_NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="LONG_FLAG" Type="Int32" />
+    <Property Name="OUT_DRUG_FLAG" Type="Int32" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DOCTOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="STOP_DOCTOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_GOODS_NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="GYTJ_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GYTJ_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="USAGE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="USAGE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FREQ_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FREQ_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DOSE_ONCE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DOSE_UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="QTY_TOT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="QTY_TOT_UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CHN_MEDI_QTY" Type="Int32" />
+    <Property Name="USE_INTENDED_CODE" Type="Int32" />
+    <Property Name="EXEC_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EXEC_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EXEC_PERSON" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EXEC_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_IN_PATIENT">
+    <Key>
+      <PropertyRef Name="PATIENT_NO" />
+    </Key>
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IN_TIMES" Type="Int32" />
+    <Property Name="CASE_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CARD_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ID_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="BIRTH_DATE" Type="DateTime" Precision="3" />
+    <Property Name="GENDER_CODE" Type="Int32" />
+    <Property Name="COUNTRY_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NATION_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="MARI_STAT_CODE" Type="Int32" />
+    <Property Name="CHARGE_TYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CHARGE_TYPE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IN_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OUT_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IN_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IN_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="OUT_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OUT_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IN_DEPT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="OUT_DEPT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DOCTOR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DOCTOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IN_SOURCE_CODE" Type="Int32" />
+    <Property Name="IN_STATUS_CODE" Type="Int32" />
+    <Property Name="OUT_WAY_CODE" Type="Int32" />
+    <Property Name="OUT_STATUS_CODE" Type="Int32" />
+    <Property Name="IN_DIAG_CODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IN_DIAG_NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="OUT_DIAG_CODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OUT_DIAG_NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_OUT_EMR">
+    <Key>
+      <PropertyRef Name="EMR_REC_ID" />
+    </Key>
+    <Property Name="EMR_REC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="VISIT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="COMPLAINTS" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CASE_ALLERGY" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CASE_NOW" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CASE_OLD" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="FIRST_VISIT_FLAG" Type="Int32" />
+    <Property Name="PHYSICAL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CHECK_ITEM_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CHECK_RESULT" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DIAGNOSIS_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DIAGNOSIS_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_OUT_PATIENT">
+    <Key>
+      <PropertyRef Name="PATIENT_NO" />
+    </Key>
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CASE_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CARD_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ID_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="BIRTH_DATE" Type="DateTime" Precision="3" />
+    <Property Name="GENDER_CODE" Type="Int32" />
+    <Property Name="COUNTRY_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NATION_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="MARI_STAT_CODE" Type="Int32" />
+    <Property Name="CHARGE_TYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CHARGE_TYPE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="REG_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REG_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="REG_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="REG_LEVEL_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="REG_LEVEL_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SEE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SEE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DOCTOR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DOCTOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DIAG_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DIAG_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DIAG_DATE" Type="DateTime" Precision="3" />
+    <Property Name="FIRST_VISIT_FLAG" Type="Int32" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_OUT_RECIPE">
+    <Key>
+      <PropertyRef Name="RECIPE_ID" />
+    </Key>
+    <Property Name="RECIPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="RECIPE_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="RECIPE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="RECIPE_TYPE_CODE" Type="Int32" />
+    <Property Name="ITEM_CODE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DOCTOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_GOODS_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="GYTJ_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GYTJ_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="USAGE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="USAGE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FREQ_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FREQ_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DOSE_ONCE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DOSE_UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="QTY_TOT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="QTY_TOT_UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="USE_DAYS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EXEC_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EXEC_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EXEC_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_PATHOLOGY_RECORD">
+    <Key>
+      <PropertyRef Name="PATHOLOGY_ID" />
+    </Key>
+    <Property Name="PATHOLOGY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IN_FLAG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="BIRTH_DATE" Type="DateTime" Precision="3" />
+    <Property Name="GENDER_CODE" Type="Int32" />
+    <Property Name="CASE_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="MO_CHECK_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="COMPLAINTS" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="DIAGNOSE_NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="MEDICAL_HISTORY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_DATE" Type="DateTime" Precision="3" />
+    <Property Name="APPLY_DEPT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_DEPT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_DOCTOR_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SAMPLING_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SAMPLE_PART" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SAMPLE_TYPE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="RECEIVE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ITEM_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CHECK_DOCTOR_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CHECK_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REPORT_OBJECTIVE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="REPORT_SUBJECTIVE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="REPORT_RESULT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BIOPSY" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PATHOLOGY" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="POSITIVE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SECTION_COUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FROZEN_RESULT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FROZEN_REPORT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REPORT_DATE_TIME" Type="DateTime" Precision="3" />
+    <Property Name="REPORT_DOCTOR_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_TEST_RECORD">
+    <Key>
+      <PropertyRef Name="SAMPLE_NO" />
+    </Key>
+    <Property Name="SAMPLE_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IN_FLAG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="MO_TEST_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="TEST_ITEM_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TEST_ITEM_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SAMPLE_TYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SAMPLE_TYPE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SAMPLE_BODY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_DEP_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_DEP_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SAMPLING_DATE" Type="DateTime" Precision="3" />
+    <Property Name="RECEIVE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="TEST_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REPORT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REPORT_DOCTOR_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_TEST_RESULT">
+    <Key>
+      <PropertyRef Name="RESULT_ID" />
+    </Key>
+    <Property Name="RESULT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SAMPLE_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IN_FLAG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="RESULT_ITEM_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RESULT_ITEM_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RESULT_VALUE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RESULT_UNIT" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="REF_RANGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MIN_RANGE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="MAX_RANGE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="RESULT_STATUS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TEST_METHOD_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TEST_METHOD_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CPAT_TEST_RESULT_GERM">
+    <Key>
+      <PropertyRef Name="GERM_ID" />
+    </Key>
+    <Property Name="GERM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SAMPLE_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IN_FLAG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CULTURE_RESULT" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="GERM_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GERM_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ANTI_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ANTI_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_RESULT" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="LETTER_RESULT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="XKPIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CPAT_CHECK_RECORD" EntityType="Self.CPAT_CHECK_RECORD" />
+    <EntitySet Name="CPAT_DIAGNOSIS" EntityType="Self.CPAT_DIAGNOSIS" />
+    <EntitySet Name="CPAT_EMR_RECORD" EntityType="Self.CPAT_EMR_RECORD" />
+    <EntitySet Name="CPAT_IN_ORDERS" EntityType="Self.CPAT_IN_ORDERS" />
+    <EntitySet Name="CPAT_IN_PATIENT" EntityType="Self.CPAT_IN_PATIENT" />
+    <EntitySet Name="CPAT_OUT_EMR" EntityType="Self.CPAT_OUT_EMR" />
+    <EntitySet Name="CPAT_OUT_PATIENT" EntityType="Self.CPAT_OUT_PATIENT" />
+    <EntitySet Name="CPAT_OUT_RECIPE" EntityType="Self.CPAT_OUT_RECIPE" />
+    <EntitySet Name="CPAT_PATHOLOGY_RECORD" EntityType="Self.CPAT_PATHOLOGY_RECORD" />
+    <EntitySet Name="CPAT_TEST_RECORD" EntityType="Self.CPAT_TEST_RECORD" />
+    <EntitySet Name="CPAT_TEST_RESULT" EntityType="Self.CPAT_TEST_RESULT" />
+    <EntitySet Name="CPAT_TEST_RESULT_GERM" EntityType="Self.CPAT_TEST_RESULT_GERM" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestingCenterSystem.Models.PDP" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PDPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PDP_DB_CONF" EntityType="TestingCenterSystem.Models.PDP.PDP_DB_CONF" />
+    <EntitySet Name="PDP_ERROR_LOG" EntityType="TestingCenterSystem.Models.PDP.PDP_ERROR_LOG" />
+    <EntitySet Name="PDP_PROC_LOG" EntityType="TestingCenterSystem.Models.PDP.PDP_PROC_LOG" />
+    <EntitySet Name="PDP_PROC_STAT" EntityType="TestingCenterSystem.Models.PDP.PDP_PROC_STAT" />
+    <EntitySet Name="PDP_PROJECT" EntityType="TestingCenterSystem.Models.PDP.PDP_PROJECT" />
+    <EntitySet Name="SD_CAT_CONF" EntityType="TestingCenterSystem.Models.PDP.SD_CAT_CONF" />
+    <EntitySet Name="SD_CPAT_DETAIL" EntityType="TestingCenterSystem.Models.PDP.SD_CPAT_DETAIL" />
+    <EntitySet Name="SD_CPATS" EntityType="TestingCenterSystem.Models.PDP.SD_CPATS" />
+    <EntitySet Name="SD_EKPI_FORMULA" EntityType="TestingCenterSystem.Models.PDP.SD_EKPI_FORMULA" />
+    <EntitySet Name="SD_EKPI_INFO" EntityType="TestingCenterSystem.Models.PDP.SD_EKPI_INFO" />
+    <EntitySet Name="SD_EKPI_PARAM" EntityType="TestingCenterSystem.Models.PDP.SD_EKPI_PARAM" />
+    <EntitySet Name="SD_EPKI_VALUE" EntityType="TestingCenterSystem.Models.PDP.SD_EPKI_VALUE" />
+    <EntitySet Name="SD_FILTER_INFO" EntityType="TestingCenterSystem.Models.PDP.SD_FILTER_INFO" />
+    <EntitySet Name="SD_INFO" EntityType="TestingCenterSystem.Models.PDP.SD_INFO" />
+    <EntitySet Name="SD_ITEM_DEP" EntityType="TestingCenterSystem.Models.PDP.SD_ITEM_DEP" />
+    <EntitySet Name="SD_ITEM_INFO" EntityType="TestingCenterSystem.Models.PDP.SD_ITEM_INFO" />
+    <EntitySet Name="SD_ITEM_OPTION" EntityType="TestingCenterSystem.Models.PDP.SD_ITEM_OPTION" />
+    <EntitySet Name="SD_ITEM_VALUE" EntityType="TestingCenterSystem.Models.PDP.PDP_SD_ITEM_VALUE" />
+  </EntityContainer>
+  <EntityType Name="PDP_DB_CONF">
+    <Key>
+      <PropertyRef Name="DB_CONF_ID" />
+    </Key>
+    <Property Name="DB_CONF_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_PROJ_ID" Type="Int32" />
+    <Property Name="DB_CONF_TYPE" Type="Int32" />
+    <Property Name="SERVER_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DB_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DB_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DB_PWD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PDP_ERROR_LOG">
+    <Key>
+      <PropertyRef Name="ERROR_LOG_ID" />
+    </Key>
+    <Property Name="ERROR_LOG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="PROC_TYPE" Type="Int32" />
+    <Property Name="PROC_URL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DLL_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CLASS_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FUNC_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ERR_CONTENT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PDP_PROC_LOG">
+    <Key>
+      <PropertyRef Name="PROC_LOG_ID" />
+    </Key>
+    <Property Name="PROC_LOG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="PROC_CAT_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_CONTENT_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PDP_PROC_STAT">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+      <PropertyRef Name="PROC_CAT_CODE" />
+      <PropertyRef Name="PROC_CONTENT_ID" />
+    </Key>
+    <Property Name="SD_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROC_CAT_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_CONTENT_ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PROC_STAT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PDP_PROJECT">
+    <Key>
+      <PropertyRef Name="TC_PROJ_ID" />
+    </Key>
+    <Property Name="TC_PROJ_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_PROJ_NAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IS_COMMON" Type="Int32" />
+    <Property Name="TC_PROJ_TYPE" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <Property Name="TC_PROJ_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SD_CAT_CONF">
+    <Key>
+      <PropertyRef Name="CAT_ID" />
+    </Key>
+    <Property Name="CAT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CAT_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_TYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_TYPE_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_PA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_PA_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_SUB_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CAT_SUB_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_CPAT_DETAIL">
+    <Key>
+      <PropertyRef Name="DETAIL_ID" />
+    </Key>
+    <Property Name="DETAIL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="SD_CPAT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PATIENT_NO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IN_FLAG" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BASE_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="OUT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_CPATS">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_FILTER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_CPAT_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PATIENT_ID" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_EKPI_FORMULA">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="Int32" Nullable="false" />
+    <Property Name="NUM_FORMULA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FRA_FORMULA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_EKPI_INFO">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="SD_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_EKPI_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_EKPI_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SD_EKPI_ALIAS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="SD_EKPI_CAT" Type="Int32" />
+    <Property Name="IS_POSITIVE" Type="Int32" />
+    <Property Name="SD_EKPI_ALGO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IS_RSN" Type="Int32" />
+    <Property Name="IS_DISTRIBUTION" Type="Int32" />
+    <Property Name="IS_TREND" Type="Int32" />
+    <Property Name="VALID_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SD_EKPI_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SD_EKPI_PARAM">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+      <PropertyRef Name="SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_EKPI_PARAM_NAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_EPKI_VALUE">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="INDEX_VALUE" Type="Int32" Nullable="false" />
+    <Property Name="RSN_FLAG" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_FILTER_INFO">
+    <Key>
+      <PropertyRef Name="SD_FILTER_ID" />
+    </Key>
+    <Property Name="SD_FILTER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_FILTER_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_FILTER_NAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="SD_FILTER_ALGO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VALID_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_INFO">
+    <Key>
+      <PropertyRef Name="SD_ID" />
+    </Key>
+    <Property Name="SD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_PROJ_ID" Type="Int32" Nullable="false" />
+    <Property Name="TC_PROJ_TYPE" Type="Int32" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_NAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ALIAS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_CAT_PA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CITEM_CAT_PA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EKPI_CAT_PA_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="VALID_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_ITEM_DEP">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+      <PropertyRef Name="DEP_SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEP_SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SD_ITEM_INFO">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ID" Type="Int32" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_ALIAS" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_ITEM_DATA_TYPE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ITEM_UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_PRECISION" Type="Int32" />
+    <Property Name="SD_ITEM_SRC" Type="Int32" Nullable="false" />
+    <Property Name="IS_RESULT" Type="Int32" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="SD_ITEM_ALGO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VALID_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SD_EKPI_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="COM_SD_ITEM_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COM_SD_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SD_ITEM_OPTION">
+    <Key>
+      <PropertyRef Name="ITEM_OPTION_ID" />
+    </Key>
+    <Property Name="ITEM_OPTION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="ITEM_OPTION_NAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NO" Type="Int32" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PDP_SD_ITEM_VALUE">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SD_FILTER_ID" Type="Int32" />
+    <Property Name="SD_ITEM_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

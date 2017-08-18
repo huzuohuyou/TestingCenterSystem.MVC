@@ -1,0 +1,9 @@
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\bin\Debug\XKPI.Models.dll.config
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\bin\Debug\XKPI.Models.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\bin\Debug\XKPI.Models.pdb
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\bin\Debug\EntityFramework.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\bin\Debug\EntityFramework.xml
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\obj\Debug\XKPI.Models.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.Models\obj\Debug\XKPI.Models.pdb

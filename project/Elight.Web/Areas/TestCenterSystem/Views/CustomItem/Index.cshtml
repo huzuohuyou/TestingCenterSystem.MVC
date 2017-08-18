@@ -1,0 +1,457 @@
+﻿@{
+    ViewBag.Title = "数据项管理";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+    <style>
+        .close {
+            width: 600px;
+            height: 20px;
+            overflow: hidden;
+            line-height: 24px;
+        }
+
+        .open {
+            width: 600px;
+            line-height: 24px;
+        }
+
+        .hid {
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel-body">
+        <div style="margin-left:10px;">
+            <div>
+                <p style="font-size: 13px;">数据项代码：@ViewBag.SD_ITEM_CODE &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;数据项名称：@ViewBag.SD_ITEM_NAME</p>
+                @*<p style="font-size: 12px;">所属病种：@ViewBag.SD_NAME &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;所属项目：@ViewBag.TC_PROJECT_NAME</p>*@
+                <p style="font-size: 13px;">数据项简称：@ViewBag.SD_ITEM_ALIAS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;数据项类别：@ViewBag.SD_ITEM_CAT_NAME</p>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <p id="textblock" class="close">逻辑描述：@ViewBag.SD_ITEM_ALGO</p>
+                    </div>
+                    @if (ViewBag.SD_ITEM_ALGO != null && ViewBag.SD_ITEM_ALGO.Length > 37)
+                    {
+                        <div class="layui-inline">
+                            <p id="opentool" class="show" style="font-size: 13px; float: right">
+                                <a href="javascript:void(0);" onclick="openText()" style="color: dodgerblue" title="展开">
+                                    展开<i class="layui-icon" style="font-size: 13px;">&#xe61a;</i>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="layui-inline">
+                            <p id="closetool" class="hid" style="font-size: 13px;">
+                                <a href="javascript:void(0);" onclick="openText()" style="color: dodgerblue;" title="收起">
+                                    收起<i class="layui-icon" style="font-size: 13px;">&#xe619;</i>
+                                </a>
+                            </p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="layui-tab layui-tab-brief" lay-filter="itemtab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">依赖</li>
+                <li>测试</li>
+                <li>执行</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div id="denpendTab" class="layui-tab-item  layui-show">
+                    <div id="toolbar" class="elight-table-toolbar">
+                        <div class="layui-btn-group">
+                            <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_mapping_add()"><i class="layui-icon">&#xe654;</i>添加映射 </button>
+                            <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_select()"><i class="layui-icon">&#xe60b;</i>查看 </button>
+                            <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_delete()"><i class="layui-icon">&#xe640;</i>删除 </button>
+                        </div>
+                        <table id="gridList" class="layui-form layui-table table-hover elight-table" style="background-color:white;width:600px" lay-skin="line">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" lay-skin="primary">
+                                    </th>
+                                    <th style="text-align: center">数据项代码</th>
+                                    <th style="text-align: center">数据项名称</th>
+                                </tr>
+                            </thead>
+                            <tbody id="content"></tbody>
+                        </table>
+                        <div id="paged" style="padding-left:20px;"></div>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <form class="layui-form " style="width:500px;margin-left:0px">
+                        @Html.AntiForgeryToken()
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="padding:5px,10px;width:60px;">时间区间:</label>
+                            <div class="layui-input-inline">
+                                <input class="layui-input" name="startTime" placeholder="开始时间" id="start_Time">
+                            </div>
+                            <div class="layui-input-inline">
+                                <input class="layui-input" name="endTime" placeholder="截止时间" id="end_Time">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="padding:5px,10px;width:60px;">患者编号:</label>
+                            <div class="layui-input-block" style="margin-left:90px;padding-right:20px">
+                                <input class="layui-input" name="PatientId" placeholder="请输入PatientID" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="padding:5px,10px;width:60px;">测试地址:</label>
+                            <div class="layui-input-block" style="margin-left:90px;padding-right:20px;">
+                                <input class="layui-input" lay-verify="required" id="Url" name="Url" placeholder="请输入URL" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="text-align:center">
+                            <label class="layui-form-label" id="errorMsg" style="padding:5px,10px;width:60px;color:red"></label>
+                            <input type="button" lay-submit lay-filter="testdll" class="layui-btn layui-btn-normal layui-btn-small" style="width:100px" id="TestBtn" value="测试" />
+                        </div>
+                    </form>
+                    <label class="layui-form-label" style="width: 120px; padding-left: 0px">测试结果展示区</label>
+                    <table id="gridList1" class="layui-form layui-table table-hover elight-table" style="background-color:white;margin-left:10px" lay-skin="line">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center">入组样本ID</th>
+                                <th style="text-align: center">入组样本时间</th>
+                                <th style="text-align: center">患者ID</th>
+                                <th style="text-align: center">数据项的值</th>
+                            </tr>
+                        </thead>
+                        <tbody id="content1"></tbody>
+                    </table>
+                    <div id="paged1" style="padding-left:20px;"></div>
+                </div>
+                <div class="layui-tab-item">
+                    <div id="testForm" class="layui-form" style="width:500px">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="width:65px;height:10px;">测试地址:</label>
+                            <div class="layui-input-block" style="margin-left:100px;padding-right:20px;">
+                                <input class="layui-input" id="realUrl" lay-verify="required" name="realUrl" placeholder="请输入URL" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" id="exeUser" style="width: 200px;">最后执行/清库者：@ViewBag.LastExeUser</label>
+                            <label class="layui-form-label" id="exeTime" style="width: 200px;">时间：@ViewBag.LastExeTime</label>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="button" class="layui-btn layui-btn-normal layui-btn-small" lay-submit lay-filter="execute" @*onclick="btn_execute()"*@ id="Execute" value="执行" />
+                                <input type="button" class="layui-btn layui-btn-normal layui-btn-small" onclick="btn_export()" id="Export" value="导出" />
+                                <input type="button" class="layui-btn layui-btn-normal layui-btn-small" onclick="btn_lock()" id="LockData" value="锁定" />
+                                <input type="button" class="layui-btn layui-btn-normal layui-btn-small" onclick="btn_clear()" id="ClearData" value="清库" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: none">
+            <button id="btnSubmit" class="layui-btn" lay-submit lay-filter="OK">提交</button>
+        </div>
+    </div>
+</body>
+</html>
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td>
+            <input id="selected" type="checkbox" lay-skin="primary" value="{{item.DEP_SD_ITEM_ID}}">
+        </td>
+        <td style="text-align: center">{{item.DEP_SD_ITEM_CODE}}</td>
+        <td style="text-align: center">{{item.DEP_SD_ITEM_NAME}}</td>
+    </tr>
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="8">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+
+<script id="contentTpl1" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td style="text-align: center">{{item.SD_CPAT_NO}}</td>
+        <td style="text-align: center">{{item.SD_CPAT_DATE}}</td>
+        <td style="text-align: center">{{item.PATIENT_ID}}</td>
+        <td style="text-align: center">{{item.SD_ITEM_VALUE}}</td>
+    </tr>
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="8">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+<script>
+    var paging;
+    var primaryKey;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['form', 'layer', 'element', 'paging'], function () {
+        var form = layui.form(),
+            layer = parent.layer || layui.layer,
+            element = layui.element();
+        paging = layui.paging();
+        primaryKey = $.getQueryString("primaryKey");
+        initGrid();
+        form.on('submit(testdll)', function (data) {
+            var flag = Verification($("input[name='Url']").val());
+            if (flag) {
+                $.formSubmit({
+                    url: "/TestCenterSystem/CustomItem/TestDllEvent?primaryKey=" + primaryKey,// + "&startTime=" + start_Time + "&endTime=" + end_Time + "&patientId=" + PatientId + "&url=" + Url,
+                    data: data.field,
+                    close: false,
+                    success: function (data) {
+                        if ((data.state == 1)) {
+                            initData();
+                            $("#realUrl")[0].value = $("#Url")[0].value;
+                        }
+                    },
+                    fail: function (data) {
+                    }
+                });
+            }
+        });
+
+        form.on('submit(execute)', function (data) {
+            var flag = Verification($("input[name='realUrl']").val());
+            if (flag) {
+                $.formSubmit({
+                    url: "/TestCenterSystem/CustomItem/ExecuteDllEvent?primaryKey=" + primaryKey + "&url=" + data.field.realUrl,
+                    data: data.field,
+                    close: false,
+                    success: function (data) {
+                        if ((data.state == 1)) {
+                            $("#Execute").get(0).value = "已执行";
+                            $("#Execute").get(0).className = "layui-btn layui-btn-disabled layui-btn-small";
+                            $("#exeUser").get(0).textContent = "最后执行/清库者：" + data.data.exeUser;
+                            $("#exeTime").get(0).textContent = "时间：" + data.data.exeTime;
+                        }
+                    },
+                    fail: function (data) {
+                    }
+                });
+            }
+        });
+
+        form.on('submit(OK)', function (data) {
+            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+            parent.layer.close(index); //关闭窗口
+        });
+    });
+
+    layui.use('laydate', function () {
+        var laydate = layui.laydate;
+        var start = {
+            min: laydate.now()
+          , max: '2099-06-16 23:59:59'
+          , istoday: false
+          , choose: function (datas) {
+              end.min = datas; //开始日选好后，重置结束日的最小日期
+              end.start = datas; //将结束日的初始值设定为开始日
+          }
+        };
+        var end = {
+            min: laydate.now()
+          , max: '2099-06-16 23:59:59'
+          , istoday: false
+          , choose: function (datas) {
+              start.max = datas; //结束日选好后，重置开始日的最大日期
+          }
+        };
+        document.getElementById('start_Time').onclick = function () {
+            start.elem = this;
+            laydate(start);
+        }
+        document.getElementById('end_Time').onclick = function () {
+            end.elem = this;
+            laydate(end);
+        }
+    });
+    //展开、收起
+    function openText() {
+        var go = $("#textblock").get(0);
+        var o = $("#opentool").get(0);
+        var c = $("#closetool").get(0);
+        if (go.className == "close") {
+            go.className = "open";
+            o.className = "hid";
+            c.className = "show";
+            return;
+        }
+        else {
+            go.className = "close";
+            c.className = "hid";
+            o.className = "show";
+            return;
+        }
+    }
+    function initGrid() {
+        paging.init({
+            url: '/TestCenterSystem/CustomItem/Index',
+            type: "post",
+            elem: '#content',
+            tempElem: '#contentTpl',
+            params: {
+                primaryKey: primaryKey//,
+                //keyWord: $("#keyWord").val()
+            },
+            checkbox: true,
+            //singleSelected: false,//设置单选或者多选
+            pageConfig: {
+                elem: '#paged',
+                pageSize: 5
+            },
+            success: function (result) {
+            }
+        });
+    }
+
+    function initData() {
+        paging.init({
+            url: '/TestCenterSystem/CustomItem/GetItemValueList',
+            elem: '#content1',
+            tempElem: '#contentTpl1',
+            params: {
+                primaryKey: primaryKey
+                //keyWord: $("#keyWord").val()
+            },
+            checkbox: false,
+            pageConfig: {
+                elem: '#paged1',
+                pageSize: 10
+            },
+            success: function (result) {
+                //count = result.count;
+            }
+        });
+    }
+
+    function Verification(data) {
+        if (data) {
+            var str = data;//str = $("input[name='url']").val();
+            var expression = "((http|ftp|https)://)(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\&%_\./-~-]*)?";  //   /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+            var objExp = new RegExp(expression);
+            if (objExp.test(str) != true) {
+                $.layerMsg("网址格式不正确！请重新输入", "error");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    function btn_delete() {
+        var ids = $("#gridList").children('tbody').find("input[id=selected][type=checkbox]:checked");
+        if (ids.length < 1) {
+            $.layerMsg("请勾选需要删除的数据项。", "warning");
+            return;
+        }
+        $.layerConfirm({
+            content: "您已选中" + ids.length + "条数据, 确定删除吗？",
+            callback: function () {
+                $.formSubmit({
+                    url: '/TestCenterSystem/CustomItem/Delete?itemId=' + primaryKey + "&depId=" + ids[0].value,
+                    //data: { userIds: ids.join() },
+                    close: false,
+                    success: function () {
+                        initGrid();
+                    }
+                });
+            }
+        });
+    }
+    function btn_select() {
+        //此处待定，应该查看该数据项的相关配置
+        var ids = $("#gridList").children('tbody').find("input[id=selected][type=checkbox]:checked");
+        if (ids.length != 1) {
+            $.layerMsg("请勾选单条记录查看。", "warning");
+            return;
+        }
+        $.layerOpen({
+            id: "detail" + ids[0].value,
+            title: "查看数据项",
+            width: "680px",
+            height: "530px",
+            content: "/TestCenterSystem/CustomItem/Index?primaryKey=" + ids[0].value,//?ItemCount=" + ids[0],
+            btn: null
+        });
+    }
+    function btn_mapping_add() {
+        $.layerOpen({
+            id: "mapping" + primaryKey,
+            title: "添加映射",
+            width: "730px",
+            height: "600px",
+            content: "/TestCenterSystem/CustomItem/AddCustomDepend?primaryKey=" + primaryKey,
+            yes: function (iBody) {
+                iBody.find('#btnSubmit').click();
+                initGrid();
+            }
+        });
+    }
+    function btn_export() {
+        $.formSubmit({
+            url: "/TestCenterSystem/CustomItem/ExportData?primaryKey=" + primaryKey,
+            close: false,
+            showMsg: false,
+            success: function (data) {
+                if (data.data == null)
+                    $.layerMsg("数据项未执行或已清空，无法导出！", 2);
+                else if (data.data.Count == 0)
+                    $.layerMsg("数据项非结果值，无法导出！", 2);
+                else
+                    $.JSONToExcelConvertor(data.data, "数据项" + data.data[0].SD_ITEM_CODE + "执行结果表", data.title);
+            }
+        });
+    }
+
+    function btn_lock() {
+        $.formSubmit({
+            url: "/TestCenterSystem/CustomItem/LockData?primaryKey=" + primaryKey,
+            close: false,
+            success: function (data) {
+                if (data.state == 1) {
+                    $("#LockData").get(0).value = "已锁定";
+                    $("#LockData").get(0).className = "layui-btn layui-btn-disabled layui-btn-small";
+                }
+            }
+        });
+    }
+    function btn_clear() {
+        $.formSubmit({
+            url: "/TestCenterSystem/CustomItem/ClearData?primaryKey=" + primaryKey,
+            close: false,
+            success: function (data) {
+                if (data.state == 1) {
+                    $("#Execute").get(0).value = "执行";
+                    $("#Execute").get(0).className = "layui-btn layui-btn-normal layui-btn-small";
+                    $("#LockData").get(0).value = "锁定";
+                    $("#LockData").get(0).className = "layui-btn layui-btn-normal layui-btn-small";
+                    $("#exeUser").get(0).textContent = "最后执行/清库者：" + data.data.exeUser;
+                    $("#exeTime").get(0).textContent = "时间：" + data.data.exeTime;
+                }
+            }
+        });
+    }
+</script>

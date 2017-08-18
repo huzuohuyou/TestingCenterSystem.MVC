@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestCenterSystemModelsUnitStoreContainer" CdmEntityContainer="UnitEntities">
+    <EntitySetMapping Name="TC_SD_CPAT_DETAIL">
+      <EntityTypeMapping TypeName="TestCenterSystem.Models.Unit.TC_SD_CPAT_DETAIL">
+        <MappingFragment StoreEntitySet="TC_SD_CPAT_DETAIL">
+          <ScalarProperty Name="DETAIL_ID" ColumnName="DETAIL_ID" />
+          <ScalarProperty Name="SD_FILTER_ID" ColumnName="SD_FILTER_ID" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="BASE_FLAG" ColumnName="BASE_FLAG" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="IN_DATE" ColumnName="IN_DATE" />
+          <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TC_SD_CPATS">
+      <EntityTypeMapping TypeName="TestCenterSystem.Models.Unit.TC_SD_CPATS">
+        <MappingFragment StoreEntitySet="TC_SD_CPATS">
+          <ScalarProperty Name="SD_FILTER_ID" ColumnName="SD_FILTER_ID" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_CPAT_DATE" ColumnName="SD_CPAT_DATE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TC_SD_EPKI_VALUE">
+      <EntityTypeMapping TypeName="TestCenterSystem.Models.Unit.TC_SD_EPKI_VALUE">
+        <MappingFragment StoreEntitySet="TC_SD_EPKI_VALUE">
+          <ScalarProperty Name="SD_EKPI_ID" ColumnName="SD_EKPI_ID" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="SD_FILTER_ID" ColumnName="SD_FILTER_ID" />
+          <ScalarProperty Name="INDEX_VALUE" ColumnName="INDEX_VALUE" />
+          <ScalarProperty Name="RSN_FLAG" ColumnName="RSN_FLAG" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TC_SD_ITEM_VALUE">
+      <EntityTypeMapping TypeName="TestCenterSystem.Models.Unit.TC_SD_ITEM_VALUE">
+        <MappingFragment StoreEntitySet="TC_SD_ITEM_VALUE">
+          <ScalarProperty Name="SD_ITEM_ID" ColumnName="SD_ITEM_ID" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="SD_FILTER_ID" ColumnName="SD_FILTER_ID" />
+          <ScalarProperty Name="SD_ITEM_VALUE" ColumnName="SD_ITEM_VALUE" />
+          <ScalarProperty Name="LAST_VALUE" ColumnName="LAST_VALUE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

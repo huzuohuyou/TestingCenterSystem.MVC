@@ -1,0 +1,57 @@
+﻿using TestingCenter.Models;
+using System;
+using System.Linq;
+
+namespace TestingCenter.ViewModels
+{
+    public class KPINodeViewModel
+    {
+        public int KPI_ID { get; set; }
+        public string SD_CODE { get; set; }
+        public string KPI_TYPE_CODE { get; set; }
+        public string KPI_NAME { get; set; }
+        public int? Status { get; set; }
+        public string ScriptString
+        {
+            get
+            {
+                try
+                {
+                    string param = string.Empty, body = string.Empty, note = string.Empty;
+                    using (var db = new PDPContext())
+                    {
+                        var formula = db.SD_EKPI_FORMULA.FirstOrDefault(r => r.SD_EKPI_ID == KPI_ID);
+                        if (formula?.NUM_FORMULA == string.Empty)
+                        {
+                            body += string.Format(@"result={0}", formula.FRA_FORMULA.Trim());
+                        }
+                        else
+                        {
+                            body = string.Format(@"if(({0})==1):
+    result={1}", formula?.NUM_FORMULA.Trim(), formula?.FRA_FORMULA.Trim());
+                        }
+                        body = string.Format("\n{0}",  body);
+                        note ="";
+                    }
+
+                    using (var db = new PDPContext())
+                    {
+                        var pyParams = db.SD_EKPI_PARAM.ToList().Where(r => r.SD_EKPI_ID == KPI_ID);
+                        pyParams?.ToList().ForEach(r => {
+                            param += string.Format("{0}\n", r.SD_EKPI_PARAM_NAME.Trim());
+                            var dataItem = db.SD_ITEM_INFO.FirstOrDefault(i => i.SD_ITEM_ID == r.SD_ITEM_ID);
+                            note += string.Format("编码：{0} 名称：{1} 数据类型：{2}\n", dataItem.SD_ITEM_CODE.Trim(), dataItem.SD_ITEM_NAME.Trim(), dataItem.SD_ITEM_DATA_TYPE.Trim());
+                        });
+                    }
+                    return string.Format("'''\n{2}'''\n{0}{1}", param, body,note);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                
+            }
+        }
+    }
+}

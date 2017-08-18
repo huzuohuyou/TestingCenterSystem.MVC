@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestCenterSystem.Models.Unit.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TC_SD_CPAT_DETAIL">
+    <Key>
+      <PropertyRef Name="DETAIL_ID" />
+    </Key>
+    <Property Name="DETAIL_ID" Type="int" Nullable="false" />
+    <Property Name="SD_FILTER_ID" Type="int" />
+    <Property Name="SD_CPAT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="PATIENT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="IN_FLAG" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BASE_FLAG" Type="int" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="IN_DATE" Type="datetime" />
+    <Property Name="OUT_DATE" Type="datetime" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TC_SD_CPATS">
+    <Key>
+      <PropertyRef Name="SD_FILTER_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_FILTER_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="SD_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_CPAT_DATE" Type="datetime" Nullable="false" />
+    <Property Name="PATIENT_ID" Type="varchar" MaxLength="60" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TC_SD_EPKI_VALUE">
+    <Key>
+      <PropertyRef Name="SD_EKPI_ID" />
+    </Key>
+    <Property Name="SD_EKPI_ID" Type="int" Nullable="false" />
+    <Property Name="SD_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="varchar" MaxLength="60" />
+    <Property Name="SD_FILTER_ID" Type="int" />
+    <Property Name="INDEX_VALUE" Type="int" Nullable="false" />
+    <Property Name="RSN_FLAG" Type="int" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TC_SD_ITEM_VALUE">
+    <Key>
+      <PropertyRef Name="SD_ITEM_ID" />
+      <PropertyRef Name="SD_CPAT_NO" />
+    </Key>
+    <Property Name="SD_ITEM_ID" Type="int" Nullable="false" />
+    <Property Name="SD_ID" Type="int" Nullable="false" />
+    <Property Name="SD_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SD_CPAT_NO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="SD_FILTER_ID" Type="int" />
+    <Property Name="SD_ITEM_VALUE" Type="varchar(max)" />
+    <Property Name="LAST_VALUE" Type="varchar(max)" />
+    <Property Name="UPD_USER_ID" Type="varchar" MaxLength="20" />
+    <Property Name="UPD_DATE" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="TestCenterSystemModelsUnitStoreContainer">
+    <EntitySet Name="TC_SD_CPAT_DETAIL" EntityType="Self.TC_SD_CPAT_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TC_SD_CPATS" EntityType="Self.TC_SD_CPATS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TC_SD_EPKI_VALUE" EntityType="Self.TC_SD_EPKI_VALUE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TC_SD_ITEM_VALUE" EntityType="Self.TC_SD_ITEM_VALUE" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

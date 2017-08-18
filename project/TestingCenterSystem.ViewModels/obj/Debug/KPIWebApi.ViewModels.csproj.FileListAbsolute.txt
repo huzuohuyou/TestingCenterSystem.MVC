@@ -1,0 +1,12 @@
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\KPIWebApi.ViewModels.dll.config
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\KPIWebApi.ViewModels.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\KPIWebApi.ViewModels.pdb
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\EntityFramework.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\KPIWebApi.Models.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\KPIWebApi.Models.pdb
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\EntityFramework.xml
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\obj\Debug\KPIWebApi.ViewModels.csprojResolveAssemblyReference.cache
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\obj\Debug\KPIWebApi.ViewModels.dll
+D:\GitHub\KPIWebAPI\KPIWebApi.ViewModels\obj\Debug\KPIWebApi.ViewModels.pdb

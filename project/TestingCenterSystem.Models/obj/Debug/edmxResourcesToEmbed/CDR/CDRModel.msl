@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestCenterSystemModelCDRModelStoreContainer" CdmEntityContainer="CDREntities">
+    <EntitySetMapping Name="DP_ANESTHESIA_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_ANESTHESIA_RECORD">
+        <MappingFragment StoreEntitySet="DP_ANESTHESIA_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="ANESTHESIA_DATE" ColumnName="ANESTHESIA_DATE" />
+          <ScalarProperty Name="ANESTHESIA_DOCTOR" ColumnName="ANESTHESIA_DOCTOR" />
+          <ScalarProperty Name="SHED_BLOOD" ColumnName="SHED_BLOOD" />
+          <ScalarProperty Name="OPERATION_ING_INFUSION" ColumnName="OPERATION_ING_INFUSION" />
+          <ScalarProperty Name="BLOOD_TRANREACT_FLAG" ColumnName="BLOOD_TRANREACT_FLAG" />
+          <ScalarProperty Name="TRANSFUSION_BREED_NAME" ColumnName="TRANSFUSION_BREED_NAME" />
+          <ScalarProperty Name="TRANSFUSION_BREED_CODE" ColumnName="TRANSFUSION_BREED_CODE" />
+          <ScalarProperty Name="TRANSFUSION_BLOOD_DATE" ColumnName="TRANSFUSION_BLOOD_DATE" />
+          <ScalarProperty Name="TRANSFUSION_BLOOD_UNIT" ColumnName="TRANSFUSION_BLOOD_UNIT" />
+          <ScalarProperty Name="TRANSFUSION_BLOOD" ColumnName="TRANSFUSION_BLOOD" />
+          <ScalarProperty Name="GYTJ_NAME" ColumnName="GYTJ_NAME" />
+          <ScalarProperty Name="GYTJ_CODE" ColumnName="GYTJ_CODE" />
+          <ScalarProperty Name="DRUG_DOSE_TOT" ColumnName="DRUG_DOSE_TOT" />
+          <ScalarProperty Name="DRUG_DOSE_ONCE" ColumnName="DRUG_DOSE_ONCE" />
+          <ScalarProperty Name="DRUG_DOSE_UNIT" ColumnName="DRUG_DOSE_UNIT" />
+          <ScalarProperty Name="FREQ_NAME" ColumnName="FREQ_NAME" />
+          <ScalarProperty Name="FREQ_CODE" ColumnName="FREQ_CODE" />
+          <ScalarProperty Name="DRUG_NAME" ColumnName="DRUG_NAME" />
+          <ScalarProperty Name="DRUG_CODE" ColumnName="DRUG_CODE" />
+          <ScalarProperty Name="OPERATION_DOCTOR_NAME" ColumnName="OPERATION_DOCTOR_NAME" />
+          <ScalarProperty Name="OPERATION_DOCTOR_CODE" ColumnName="OPERATION_DOCTOR_CODE" />
+          <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+          <ScalarProperty Name="IN_DATE" ColumnName="IN_DATE" />
+          <ScalarProperty Name="ANESTHESIA_START_DATE" ColumnName="ANESTHESIA_START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="ANESTHETIC_BEFORE_DRUG" ColumnName="ANESTHETIC_BEFORE_DRUG" />
+          <ScalarProperty Name="ANESTHETIC_EFFECT" ColumnName="ANESTHETIC_EFFECT" />
+          <ScalarProperty Name="ASA_GRADE" ColumnName="ASA_GRADE" />
+          <ScalarProperty Name="PUNCTURE_COURSE" ColumnName="PUNCTURE_COURSE" />
+          <ScalarProperty Name="TREATMENT_COURSE" ColumnName="TREATMENT_COURSE" />
+          <ScalarProperty Name="COMPLICATION_FLAG" ColumnName="COMPLICATION_FLAG" />
+          <ScalarProperty Name="SPECIAL_MONITOR_RESULT" ColumnName="SPECIAL_MONITOR_RESULT" />
+          <ScalarProperty Name="SPECIAL_MONITOR_NAME" ColumnName="SPECIAL_MONITOR_NAME" />
+          <ScalarProperty Name="ROUTINE_MONITOR_RESULT" ColumnName="ROUTINE_MONITOR_RESULT" />
+          <ScalarProperty Name="ROUTINE_MONITOR_NAME" ColumnName="ROUTINE_MONITOR_NAME" />
+          <ScalarProperty Name="ANESTHESIA_DESC" ColumnName="ANESTHESIA_DESC" />
+          <ScalarProperty Name="BREATH_TYPE_CODE" ColumnName="BREATH_TYPE_CODE" />
+          <ScalarProperty Name="ANESTHESIA_POSITION" ColumnName="ANESTHESIA_POSITION" />
+          <ScalarProperty Name="ANESTHESIA_DRUG_NAME" ColumnName="ANESTHESIA_DRUG_NAME" />
+          <ScalarProperty Name="TRACHEALTUBE_TYPE" ColumnName="TRACHEALTUBE_TYPE" />
+          <ScalarProperty Name="ANESTHESIA_NAME" ColumnName="ANESTHESIA_NAME" />
+          <ScalarProperty Name="ANESTHESIA_CODE" ColumnName="ANESTHESIA_CODE" />
+          <ScalarProperty Name="POSITION_NAME" ColumnName="POSITION_NAME" />
+          <ScalarProperty Name="POSITION_CODE" ColumnName="POSITION_CODE" />
+          <ScalarProperty Name="OPERATION_NAME" ColumnName="OPERATION_NAME" />
+          <ScalarProperty Name="OPERATION_CODE" ColumnName="OPERATION_CODE" />
+          <ScalarProperty Name="RH_BLOOD_CODE" ColumnName="RH_BLOOD_CODE" />
+          <ScalarProperty Name="ABO_BLOOD_CODE" ColumnName="ABO_BLOOD_CODE" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="APPLY_NO" ColumnName="APPLY_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CLINIC_CODE" ColumnName="CLINIC_CODE" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="ANE_REC_ID" ColumnName="ANE_REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_ASSESSMENT_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_ASSESSMENT_RECORD">
+        <MappingFragment StoreEntitySet="DP_ASSESSMENT_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="VALUE_TYPE" ColumnName="VALUE_TYPE" />
+          <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+          <ScalarProperty Name="SCORE" ColumnName="SCORE" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
+          <ScalarProperty Name="SYMPTOM" ColumnName="SYMPTOM" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="AREA_CODE" ColumnName="AREA_CODE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="ASS_REC_ID" ColumnName="ASS_REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_CHECK_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_CHECK_RECORD">
+        <MappingFragment StoreEntitySet="DP_CHECK_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="REPORT_DOCTOR_NAME" ColumnName="REPORT_DOCTOR_NAME" />
+          <ScalarProperty Name="REPORT_DATE" ColumnName="REPORT_DATE" />
+          <ScalarProperty Name="REPORT_RESULT" ColumnName="REPORT_RESULT" />
+          <ScalarProperty Name="REPORT_SUBJECTIVE" ColumnName="REPORT_SUBJECTIVE" />
+          <ScalarProperty Name="REPORT_OBJECTIVE" ColumnName="REPORT_OBJECTIVE" />
+          <ScalarProperty Name="CHECK_RESULT_TYPE" ColumnName="CHECK_RESULT_TYPE" />
+          <ScalarProperty Name="BODY_PART_NAME" ColumnName="BODY_PART_NAME" />
+          <ScalarProperty Name="EXEC_DEPT_NAME" ColumnName="EXEC_DEPT_NAME" />
+          <ScalarProperty Name="EXEC_DEPT_CODE" ColumnName="EXEC_DEPT_CODE" />
+          <ScalarProperty Name="CHECK_DATE" ColumnName="CHECK_DATE" />
+          <ScalarProperty Name="RECEIVE_DATE" ColumnName="RECEIVE_DATE" />
+          <ScalarProperty Name="APPLY_DEPT_NAME" ColumnName="APPLY_DEPT_NAME" />
+          <ScalarProperty Name="APPLY_DEPT_CODE" ColumnName="APPLY_DEPT_CODE" />
+          <ScalarProperty Name="APPLY_DATE" ColumnName="APPLY_DATE" />
+          <ScalarProperty Name="CHECK_ITEM_NAME" ColumnName="CHECK_ITEM_NAME" />
+          <ScalarProperty Name="CHECK_ITEM_CODE" ColumnName="CHECK_ITEM_CODE" />
+          <ScalarProperty Name="CHECK_TYPE" ColumnName="CHECK_TYPE" />
+          <ScalarProperty Name="CHK_SYSTEM_CODE" ColumnName="CHK_SYSTEM_CODE" />
+          <ScalarProperty Name="APPLY_NO" ColumnName="APPLY_NO" />
+          <ScalarProperty Name="MO_CHECK_NO" ColumnName="MO_CHECK_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CLINIC_CODE" ColumnName="CLINIC_CODE" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="CHECK_ID" ColumnName="CHECK_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_CONSULT_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_CONSULT_RECORD">
+        <MappingFragment StoreEntitySet="DP_CONSULT_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="SUGGESTION" ColumnName="SUGGESTION" />
+          <ScalarProperty Name="REASON" ColumnName="REASON" />
+          <ScalarProperty Name="CONSULT_DEPT_CODE" ColumnName="CONSULT_DEPT_CODE" />
+          <ScalarProperty Name="APPLY_DEPT_CODE" ColumnName="APPLY_DEPT_CODE" />
+          <ScalarProperty Name="CONSULT_DATE" ColumnName="CONSULT_DATE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="CONSULT_ID" ColumnName="CONSULT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_DIAGNOSIS">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_DIAGNOSIS">
+        <MappingFragment StoreEntitySet="DP_DIAGNOSIS">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="TREAT_RESULT" ColumnName="TREAT_RESULT" />
+          <ScalarProperty Name="DIAG_DATE" ColumnName="DIAG_DATE" />
+          <ScalarProperty Name="DIAG_NAME" ColumnName="DIAG_NAME" />
+          <ScalarProperty Name="DIAG_CODE" ColumnName="DIAG_CODE" />
+          <ScalarProperty Name="DIAG_NO" ColumnName="DIAG_NO" />
+          <ScalarProperty Name="DIAG_TYPE_CODE" ColumnName="DIAG_TYPE_CODE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="DIAG_ID" ColumnName="DIAG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_DICT_CHECKTEST">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_DICT_CHECKTEST">
+        <MappingFragment StoreEntitySet="DP_DICT_CHECKTEST">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="ITEM_UNIT" ColumnName="ITEM_UNIT" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
+          <ScalarProperty Name="ITEM_LIST_NAME" ColumnName="ITEM_LIST_NAME" />
+          <ScalarProperty Name="ITEM_LIST_CODE" ColumnName="ITEM_LIST_CODE" />
+          <ScalarProperty Name="CHK_CAT_CODE" ColumnName="CHK_CAT_CODE" />
+          <ScalarProperty Name="DICT_ITEM_ID" ColumnName="DICT_ITEM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_DICT_DEPT">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_DICT_DEPT">
+        <MappingFragment StoreEntitySet="DP_DICT_DEPT">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="PARENT_DEPT_CODE" ColumnName="PARENT_DEPT_CODE" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_DICT_DETAIL">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_DICT_DETAIL">
+        <MappingFragment StoreEntitySet="DP_DICT_DETAIL">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="DP_ITEM_NAME" ColumnName="DP_ITEM_NAME" />
+          <ScalarProperty Name="DP_ITEM_CODE" ColumnName="DP_ITEM_CODE" />
+          <ScalarProperty Name="DP_CLASS_CODE" ColumnName="DP_CLASS_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_DICT_DIAG">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_DICT_DIAG">
+        <MappingFragment StoreEntitySet="DP_DICT_DIAG">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="DIAG_NAME" ColumnName="DIAG_NAME" />
+          <ScalarProperty Name="DIAG_ICD" ColumnName="DIAG_ICD" />
+          <ScalarProperty Name="DIAG_CODE" ColumnName="DIAG_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_DICT_DRUG">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_DICT_DRUG">
+        <MappingFragment StoreEntitySet="DP_DICT_DRUG">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="PRODUCER_NAME" ColumnName="PRODUCER_NAME" />
+          <ScalarProperty Name="PRODUCING_AREA" ColumnName="PRODUCING_AREA" />
+          <ScalarProperty Name="OCT_FLAG" ColumnName="OCT_FLAG" />
+          <ScalarProperty Name="BASE_DOSE_UNIT" ColumnName="BASE_DOSE_UNIT" />
+          <ScalarProperty Name="BASE_DOSE" ColumnName="BASE_DOSE" />
+          <ScalarProperty Name="FREQ_NAME" ColumnName="FREQ_NAME" />
+          <ScalarProperty Name="USAGE_NAME" ColumnName="USAGE_NAME" />
+          <ScalarProperty Name="PACK_UNIT" ColumnName="PACK_UNIT" />
+          <ScalarProperty Name="PACK_SPECS" ColumnName="PACK_SPECS" />
+          <ScalarProperty Name="MIN_UNIT" ColumnName="MIN_UNIT" />
+          <ScalarProperty Name="SPECS" ColumnName="SPECS" />
+          <ScalarProperty Name="DOSAGE" ColumnName="DOSAGE" />
+          <ScalarProperty Name="QUALITY" ColumnName="QUALITY" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="OTHER_NAME" ColumnName="OTHER_NAME" />
+          <ScalarProperty Name="GOODS_NAME" ColumnName="GOODS_NAME" />
+          <ScalarProperty Name="GENERIC_NAME" ColumnName="GENERIC_NAME" />
+          <ScalarProperty Name="DRUG_NAME" ColumnName="DRUG_NAME" />
+          <ScalarProperty Name="DRUG_CODE" ColumnName="DRUG_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_DICT_EMPLOYEE">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_DICT_EMPLOYEE">
+        <MappingFragment StoreEntitySet="DP_DICT_EMPLOYEE">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="BIRTH_DATE" ColumnName="BIRTH_DATE" />
+          <ScalarProperty Name="EMP_PWD" ColumnName="EMP_PWD" />
+          <ScalarProperty Name="EMP_UID" ColumnName="EMP_UID" />
+          <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+          <ScalarProperty Name="EMP_CODE" ColumnName="EMP_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_DICT_MASTER">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_DICT_MASTER">
+        <MappingFragment StoreEntitySet="DP_DICT_MASTER">
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="DP_CLASS_NAME" ColumnName="DP_CLASS_NAME" />
+          <ScalarProperty Name="DP_CLASS_CODE" ColumnName="DP_CLASS_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_EMR_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_EMR_RECORD">
+        <MappingFragment StoreEntitySet="DP_EMR_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="DIRECTOR_NAME" ColumnName="DIRECTOR_NAME" />
+          <ScalarProperty Name="DIRECTOR_CODE" ColumnName="DIRECTOR_CODE" />
+          <ScalarProperty Name="PARENT_NAME" ColumnName="PARENT_NAME" />
+          <ScalarProperty Name="PARENT_CODE" ColumnName="PARENT_CODE" />
+          <ScalarProperty Name="REC_DEPT_NAME" ColumnName="REC_DEPT_NAME" />
+          <ScalarProperty Name="REC_DEPT_CODE" ColumnName="REC_DEPT_CODE" />
+          <ScalarProperty Name="REC_DATE" ColumnName="REC_DATE" />
+          <ScalarProperty Name="REC_PSN_NAME" ColumnName="REC_PSN_NAME" />
+          <ScalarProperty Name="REC_PSN_CODE" ColumnName="REC_PSN_CODE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATOR_NAME" ColumnName="CREATOR_NAME" />
+          <ScalarProperty Name="CREATOR_CODE" ColumnName="CREATOR_CODE" />
+          <ScalarProperty Name="REC_TYPE" ColumnName="REC_TYPE" />
+          <ScalarProperty Name="REC_CONTENT_FM" ColumnName="REC_CONTENT_FM" />
+          <ScalarProperty Name="REC_CONTENT" ColumnName="REC_CONTENT" />
+          <ScalarProperty Name="LGCY_SUB_TYPE_NAME" ColumnName="LGCY_SUB_TYPE_NAME" />
+          <ScalarProperty Name="LGCY_SUB_TYPE_CODE" ColumnName="LGCY_SUB_TYPE_CODE" />
+          <ScalarProperty Name="LGCY_TYPE_NAME" ColumnName="LGCY_TYPE_NAME" />
+          <ScalarProperty Name="LGCY_TYPE_CODE" ColumnName="LGCY_TYPE_CODE" />
+          <ScalarProperty Name="EMR_TYPE_NAME" ColumnName="EMR_TYPE_NAME" />
+          <ScalarProperty Name="EMR_TYPE_CODE" ColumnName="EMR_TYPE_CODE" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="EMR_REC_ID" ColumnName="EMR_REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_IN_ORDERS">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_IN_ORDERS">
+        <MappingFragment StoreEntitySet="DP_IN_ORDERS">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="EXEC_DATE" ColumnName="EXEC_DATE" />
+          <ScalarProperty Name="EXEC_PERSON" ColumnName="EXEC_PERSON" />
+          <ScalarProperty Name="EXEC_DEPT_NAME" ColumnName="EXEC_DEPT_NAME" />
+          <ScalarProperty Name="EXEC_DEPT_CODE" ColumnName="EXEC_DEPT_CODE" />
+          <ScalarProperty Name="USE_INTENDED_CODE" ColumnName="USE_INTENDED_CODE" />
+          <ScalarProperty Name="CHN_MEDI_QTY" ColumnName="CHN_MEDI_QTY" />
+          <ScalarProperty Name="QTY_TOT_UNIT" ColumnName="QTY_TOT_UNIT" />
+          <ScalarProperty Name="QTY_TOT" ColumnName="QTY_TOT" />
+          <ScalarProperty Name="DOSE_UNIT" ColumnName="DOSE_UNIT" />
+          <ScalarProperty Name="DOSE_ONCE" ColumnName="DOSE_ONCE" />
+          <ScalarProperty Name="FREQ_NAME" ColumnName="FREQ_NAME" />
+          <ScalarProperty Name="FREQ_CODE" ColumnName="FREQ_CODE" />
+          <ScalarProperty Name="USAGE_NAME" ColumnName="USAGE_NAME" />
+          <ScalarProperty Name="USAGE_CODE" ColumnName="USAGE_CODE" />
+          <ScalarProperty Name="GYTJ_NAME" ColumnName="GYTJ_NAME" />
+          <ScalarProperty Name="GYTJ_CODE" ColumnName="GYTJ_CODE" />
+          <ScalarProperty Name="ITEM_GOODS_NAME" ColumnName="ITEM_GOODS_NAME" />
+          <ScalarProperty Name="STOP_DOCTOR_NAME" ColumnName="STOP_DOCTOR_NAME" />
+          <ScalarProperty Name="DOCTOR_NAME" ColumnName="DOCTOR_NAME" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="OUT_DRUG_FLAG" ColumnName="OUT_DRUG_FLAG" />
+          <ScalarProperty Name="LONG_FLAG" ColumnName="LONG_FLAG" />
+          <ScalarProperty Name="ORDER_ITEM_NAME" ColumnName="ORDER_ITEM_NAME" />
+          <ScalarProperty Name="ORDER_ITEM_CODE" ColumnName="ORDER_ITEM_CODE" />
+          <ScalarProperty Name="ORDER_TYPE_CODE" ColumnName="ORDER_TYPE_CODE" />
+          <ScalarProperty Name="DATE_END" ColumnName="DATE_END" />
+          <ScalarProperty Name="DATE_BEGIN" ColumnName="DATE_BEGIN" />
+          <ScalarProperty Name="MO_DATE" ColumnName="MO_DATE" />
+          <ScalarProperty Name="APPLY_NO" ColumnName="APPLY_NO" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="MO_ORDER_NO" ColumnName="MO_ORDER_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_IN_PATIENT">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_IN_PATIENT">
+        <MappingFragment StoreEntitySet="DP_IN_PATIENT">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="OUT_DIAG_NAME" ColumnName="OUT_DIAG_NAME" />
+          <ScalarProperty Name="OUT_DIAG_CODE" ColumnName="OUT_DIAG_CODE" />
+          <ScalarProperty Name="IN_DIAG_NAME" ColumnName="IN_DIAG_NAME" />
+          <ScalarProperty Name="IN_DIAG_CODE" ColumnName="IN_DIAG_CODE" />
+          <ScalarProperty Name="OUT_STATUS_CODE" ColumnName="OUT_STATUS_CODE" />
+          <ScalarProperty Name="OUT_WAY_CODE" ColumnName="OUT_WAY_CODE" />
+          <ScalarProperty Name="IN_STATUS_CODE" ColumnName="IN_STATUS_CODE" />
+          <ScalarProperty Name="IN_SOURCE_CODE" ColumnName="IN_SOURCE_CODE" />
+          <ScalarProperty Name="DOCTOR_NAME" ColumnName="DOCTOR_NAME" />
+          <ScalarProperty Name="DOCTOR_CODE" ColumnName="DOCTOR_CODE" />
+          <ScalarProperty Name="OUT_DEPT_DATE" ColumnName="OUT_DEPT_DATE" />
+          <ScalarProperty Name="IN_DEPT_DATE" ColumnName="IN_DEPT_DATE" />
+          <ScalarProperty Name="OUT_DEPT_NAME" ColumnName="OUT_DEPT_NAME" />
+          <ScalarProperty Name="OUT_DEPT_CODE" ColumnName="OUT_DEPT_CODE" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="AREA_CODE" ColumnName="AREA_CODE" />
+          <ScalarProperty Name="IN_DEPT_NAME" ColumnName="IN_DEPT_NAME" />
+          <ScalarProperty Name="IN_DEPT_CODE" ColumnName="IN_DEPT_CODE" />
+          <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+          <ScalarProperty Name="IN_DATE" ColumnName="IN_DATE" />
+          <ScalarProperty Name="CHARGE_TYPE_NAME" ColumnName="CHARGE_TYPE_NAME" />
+          <ScalarProperty Name="CHARGE_TYPE_CODE" ColumnName="CHARGE_TYPE_CODE" />
+          <ScalarProperty Name="MARI_STAT_CODE" ColumnName="MARI_STAT_CODE" />
+          <ScalarProperty Name="NATION_NAME" ColumnName="NATION_NAME" />
+          <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+          <ScalarProperty Name="GENDER_CODE" ColumnName="GENDER_CODE" />
+          <ScalarProperty Name="BIRTH_DATE" ColumnName="BIRTH_DATE" />
+          <ScalarProperty Name="ID_NO" ColumnName="ID_NO" />
+          <ScalarProperty Name="PATIENT_NAME" ColumnName="PATIENT_NAME" />
+          <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
+          <ScalarProperty Name="CASE_NO" ColumnName="CASE_NO" />
+          <ScalarProperty Name="IN_TIMES" ColumnName="IN_TIMES" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_INFECTION_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_INFECTION_RECORD">
+        <MappingFragment StoreEntitySet="DP_INFECTION_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="PRED_FACT_NAME" ColumnName="PRED_FACT_NAME" />
+          <ScalarProperty Name="PRED_FACT_CODE" ColumnName="PRED_FACT_CODE" />
+          <ScalarProperty Name="INFE_PROG_NAME" ColumnName="INFE_PROG_NAME" />
+          <ScalarProperty Name="INFE_PROG_CODE" ColumnName="INFE_PROG_CODE" />
+          <ScalarProperty Name="INFE_DEPT_NAME" ColumnName="INFE_DEPT_NAME" />
+          <ScalarProperty Name="INFE_DEPT_CODE" ColumnName="INFE_DEPT_CODE" />
+          <ScalarProperty Name="IS_BABY_INFE" ColumnName="IS_BABY_INFE" />
+          <ScalarProperty Name="INFE_POS_OTHER" ColumnName="INFE_POS_OTHER" />
+          <ScalarProperty Name="INFE_POS_NAME" ColumnName="INFE_POS_NAME" />
+          <ScalarProperty Name="INFE_POS_CODE" ColumnName="INFE_POS_CODE" />
+          <ScalarProperty Name="INFE_TYPE_NAME" ColumnName="INFE_TYPE_NAME" />
+          <ScalarProperty Name="INFE_TYPE_CODE" ColumnName="INFE_TYPE_CODE" />
+          <ScalarProperty Name="INFE_DATE" ColumnName="INFE_DATE" />
+          <ScalarProperty Name="OUT_DEPT_NAME" ColumnName="OUT_DEPT_NAME" />
+          <ScalarProperty Name="OUT_DEPT_CODE" ColumnName="OUT_DEPT_CODE" />
+          <ScalarProperty Name="OUT_DIAG_NAME" ColumnName="OUT_DIAG_NAME" />
+          <ScalarProperty Name="OUT_DIAG_CODE" ColumnName="OUT_DIAG_CODE" />
+          <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+          <ScalarProperty Name="IN_DEPT_NAME" ColumnName="IN_DEPT_NAME" />
+          <ScalarProperty Name="IN_DEPT_CODE" ColumnName="IN_DEPT_CODE" />
+          <ScalarProperty Name="IN_DIAG_NAME" ColumnName="IN_DIAG_NAME" />
+          <ScalarProperty Name="IN_DIAG_CODE" ColumnName="IN_DIAG_CODE" />
+          <ScalarProperty Name="IN_DATE" ColumnName="IN_DATE" />
+          <ScalarProperty Name="INFE_NO" ColumnName="INFE_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CLINIC_CODE" ColumnName="CLINIC_CODE" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="INFE_REC_ID" ColumnName="INFE_REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_MEDICAL_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_MEDICAL_RECORD">
+        <MappingFragment StoreEntitySet="DP_MEDICAL_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="OTHER_FEE" ColumnName="OTHER_FEE" />
+          <ScalarProperty Name="TREAT_MATERIAL_FEE" ColumnName="TREAT_MATERIAL_FEE" />
+          <ScalarProperty Name="CHECK_MATERIAL_FEE" ColumnName="CHECK_MATERIAL_FEE" />
+          <ScalarProperty Name="XBYZLZP_FEE" ColumnName="XBYZLZP_FEE" />
+          <ScalarProperty Name="NXYZLZP_FEE" ColumnName="NXYZLZP_FEE" />
+          <ScalarProperty Name="QDBLZP_FEE" ColumnName="QDBLZP_FEE" />
+          <ScalarProperty Name="BDBLZP_FEE" ColumnName="BDBLZP_FEE" />
+          <ScalarProperty Name="BLOOD_FEE" ColumnName="BLOOD_FEE" />
+          <ScalarProperty Name="CN_HERBAL_MEDICINE_FEE" ColumnName="CN_HERBAL_MEDICINE_FEE" />
+          <ScalarProperty Name="CN_PATENT_MEDICINE_FEE" ColumnName="CN_PATENT_MEDICINE_FEE" />
+          <ScalarProperty Name="ANTIBACTERIALS_FEE" ColumnName="ANTIBACTERIALS_FEE" />
+          <ScalarProperty Name="WEST_MEDICINE_FEE" ColumnName="WEST_MEDICINE_FEE" />
+          <ScalarProperty Name="CN_MEDICINE_TREAT_FEE" ColumnName="CN_MEDICINE_TREAT_FEE" />
+          <ScalarProperty Name="RECOVERY_FEE" ColumnName="RECOVERY_FEE" />
+          <ScalarProperty Name="OP_FEE" ColumnName="OP_FEE" />
+          <ScalarProperty Name="ANESTHESIA_FEE" ColumnName="ANESTHESIA_FEE" />
+          <ScalarProperty Name="OP_TREAT_FEE" ColumnName="OP_TREAT_FEE" />
+          <ScalarProperty Name="PHYSICS_TREAT_FEE" ColumnName="PHYSICS_TREAT_FEE" />
+          <ScalarProperty Name="TREAT_WITHOUT_OP_FEE" ColumnName="TREAT_WITHOUT_OP_FEE" />
+          <ScalarProperty Name="CLINICAL_DIAG_FEE" ColumnName="CLINICAL_DIAG_FEE" />
+          <ScalarProperty Name="CHECK_FEE" ColumnName="CHECK_FEE" />
+          <ScalarProperty Name="TEST_FEE" ColumnName="TEST_FEE" />
+          <ScalarProperty Name="PATHOLOGY_DIAG_FEE" ColumnName="PATHOLOGY_DIAG_FEE" />
+          <ScalarProperty Name="ZHYLFWLQT_FEE" ColumnName="ZHYLFWLQT_FEE" />
+          <ScalarProperty Name="NURSING_FEE" ColumnName="NURSING_FEE" />
+          <ScalarProperty Name="ORDINARY_TREAT_FEE" ColumnName="ORDINARY_TREAT_FEE" />
+          <ScalarProperty Name="SERVICE_FEE" ColumnName="SERVICE_FEE" />
+          <ScalarProperty Name="OWN_TOTAL_FEE" ColumnName="OWN_TOTAL_FEE" />
+          <ScalarProperty Name="TOTAL_FEE" ColumnName="TOTAL_FEE" />
+          <ScalarProperty Name="OUT_WAY_CODE" ColumnName="OUT_WAY_CODE" />
+          <ScalarProperty Name="BABY_BIRTH_WEIGHT3" ColumnName="BABY_BIRTH_WEIGHT3" />
+          <ScalarProperty Name="BABY_BIRTH_WEIGHT2" ColumnName="BABY_BIRTH_WEIGHT2" />
+          <ScalarProperty Name="BABY_BIRTH_WEIGHT" ColumnName="BABY_BIRTH_WEIGHT" />
+          <ScalarProperty Name="BABY_IN_WEIGHT" ColumnName="BABY_IN_WEIGHT" />
+          <ScalarProperty Name="SELF_BLOOD_RETURN" ColumnName="SELF_BLOOD_RETURN" />
+          <ScalarProperty Name="WHOLE_BLOOD" ColumnName="WHOLE_BLOOD" />
+          <ScalarProperty Name="PLASMA" ColumnName="PLASMA" />
+          <ScalarProperty Name="PLATELET" ColumnName="PLATELET" />
+          <ScalarProperty Name="RED_BLOOD_DELL" ColumnName="RED_BLOOD_DELL" />
+          <ScalarProperty Name="TRANSFUSION_REACTION" ColumnName="TRANSFUSION_REACTION" />
+          <ScalarProperty Name="RH_BLOOD_CODE" ColumnName="RH_BLOOD_CODE" />
+          <ScalarProperty Name="ABO_BLOOD_CODE" ColumnName="ABO_BLOOD_CODE" />
+          <ScalarProperty Name="ICU_OUT_DATE3" ColumnName="ICU_OUT_DATE3" />
+          <ScalarProperty Name="ICU_IN_DATE3" ColumnName="ICU_IN_DATE3" />
+          <ScalarProperty Name="ICU_NAME3" ColumnName="ICU_NAME3" />
+          <ScalarProperty Name="ICU_OUT_DATE2" ColumnName="ICU_OUT_DATE2" />
+          <ScalarProperty Name="ICU_IN_DATE2" ColumnName="ICU_IN_DATE2" />
+          <ScalarProperty Name="ICU_NAME2" ColumnName="ICU_NAME2" />
+          <ScalarProperty Name="ICU_OUT_DATE" ColumnName="ICU_OUT_DATE" />
+          <ScalarProperty Name="ICU_IN_DATE" ColumnName="ICU_IN_DATE" />
+          <ScalarProperty Name="ICU_NAME" ColumnName="ICU_NAME" />
+          <ScalarProperty Name="NURSING_DAYS_III" ColumnName="NURSING_DAYS_III" />
+          <ScalarProperty Name="NURSING_DAYS_II" ColumnName="NURSING_DAYS_II" />
+          <ScalarProperty Name="NURSING_DAYS_I" ColumnName="NURSING_DAYS_I" />
+          <ScalarProperty Name="SPECIAL_NURSING_DAYS" ColumnName="SPECIAL_NURSING_DAYS" />
+          <ScalarProperty Name="ANESTHESIA_DOCTOR3" ColumnName="ANESTHESIA_DOCTOR3" />
+          <ScalarProperty Name="WOUND_GRADE3" ColumnName="WOUND_GRADE3" />
+          <ScalarProperty Name="ANESTHESIA_GRADE3" ColumnName="ANESTHESIA_GRADE3" />
+          <ScalarProperty Name="ANESTHESIA_NAME3" ColumnName="ANESTHESIA_NAME3" />
+          <ScalarProperty Name="ASSISTANT_II3" ColumnName="ASSISTANT_II3" />
+          <ScalarProperty Name="ASSISTANT_I3" ColumnName="ASSISTANT_I3" />
+          <ScalarProperty Name="OPERATION_DOCTOR3" ColumnName="OPERATION_DOCTOR3" />
+          <ScalarProperty Name="CONTINUED_TIME3" ColumnName="CONTINUED_TIME3" />
+          <ScalarProperty Name="POSITION_NAME3" ColumnName="POSITION_NAME3" />
+          <ScalarProperty Name="OPERATION_NAME3" ColumnName="OPERATION_NAME3" />
+          <ScalarProperty Name="OPERATION_DATE3" ColumnName="OPERATION_DATE3" />
+          <ScalarProperty Name="OPERATION_CODE3" ColumnName="OPERATION_CODE3" />
+          <ScalarProperty Name="ANESTHESIA_DOCTOR2" ColumnName="ANESTHESIA_DOCTOR2" />
+          <ScalarProperty Name="WOUND_GRADE2" ColumnName="WOUND_GRADE2" />
+          <ScalarProperty Name="ANESTHESIA_GRADE2" ColumnName="ANESTHESIA_GRADE2" />
+          <ScalarProperty Name="ANESTHESIA_NAME2" ColumnName="ANESTHESIA_NAME2" />
+          <ScalarProperty Name="ASSISTANT_II2" ColumnName="ASSISTANT_II2" />
+          <ScalarProperty Name="ASSISTANT_I2" ColumnName="ASSISTANT_I2" />
+          <ScalarProperty Name="OPERATION_DOCTOR2" ColumnName="OPERATION_DOCTOR2" />
+          <ScalarProperty Name="CONTINUED_TIME2" ColumnName="CONTINUED_TIME2" />
+          <ScalarProperty Name="POSITION_NAME2" ColumnName="POSITION_NAME2" />
+          <ScalarProperty Name="OPERATION_NAME2" ColumnName="OPERATION_NAME2" />
+          <ScalarProperty Name="OPERATION_DATE2" ColumnName="OPERATION_DATE2" />
+          <ScalarProperty Name="OPERATION_CODE2" ColumnName="OPERATION_CODE2" />
+          <ScalarProperty Name="ANESTHESIA_DOCTOR" ColumnName="ANESTHESIA_DOCTOR" />
+          <ScalarProperty Name="WOUND_GRADE" ColumnName="WOUND_GRADE" />
+          <ScalarProperty Name="ANESTHESIA_GRADE" ColumnName="ANESTHESIA_GRADE" />
+          <ScalarProperty Name="ANESTHESIA_NAME" ColumnName="ANESTHESIA_NAME" />
+          <ScalarProperty Name="ASSISTANT_II" ColumnName="ASSISTANT_II" />
+          <ScalarProperty Name="ASSISTANT_I" ColumnName="ASSISTANT_I" />
+          <ScalarProperty Name="OPERATION_DOCTOR" ColumnName="OPERATION_DOCTOR" />
+          <ScalarProperty Name="CONTINUED_TIME" ColumnName="CONTINUED_TIME" />
+          <ScalarProperty Name="POSITION_NAME" ColumnName="POSITION_NAME" />
+          <ScalarProperty Name="OPERATION_NAME" ColumnName="OPERATION_NAME" />
+          <ScalarProperty Name="OPERATION_DATE" ColumnName="OPERATION_DATE" />
+          <ScalarProperty Name="OPERATION_CODE" ColumnName="OPERATION_CODE" />
+          <ScalarProperty Name="RESPONSIBLE_NURSE" ColumnName="RESPONSIBLE_NURSE" />
+          <ScalarProperty Name="IN_HOS_DOCTOR_NAME" ColumnName="IN_HOS_DOCTOR_NAME" />
+          <ScalarProperty Name="ATTENDING_DOCTOR_NAME" ColumnName="ATTENDING_DOCTOR_NAME" />
+          <ScalarProperty Name="DIRECTOR_NAME" ColumnName="DIRECTOR_NAME" />
+          <ScalarProperty Name="DEPT_DIRECTOR_NAME" ColumnName="DEPT_DIRECTOR_NAME" />
+          <ScalarProperty Name="RESCUE_SUCCESS_TIMES" ColumnName="RESCUE_SUCCESS_TIMES" />
+          <ScalarProperty Name="RESCUE_TIMES" ColumnName="RESCUE_TIMES" />
+          <ScalarProperty Name="ALLERGY_DRUG_NAME" ColumnName="ALLERGY_DRUG_NAME" />
+          <ScalarProperty Name="ALLERGY" ColumnName="ALLERGY" />
+          <ScalarProperty Name="PATHOLOGY_NO3" ColumnName="PATHOLOGY_NO3" />
+          <ScalarProperty Name="PATHOLOGY_DIAG_NAME3" ColumnName="PATHOLOGY_DIAG_NAME3" />
+          <ScalarProperty Name="PATHOLOGY_DIAG_CODE3" ColumnName="PATHOLOGY_DIAG_CODE3" />
+          <ScalarProperty Name="PATHOLOGY_NO2" ColumnName="PATHOLOGY_NO2" />
+          <ScalarProperty Name="PATHOLOGY_DIAG_NAME2" ColumnName="PATHOLOGY_DIAG_NAME2" />
+          <ScalarProperty Name="PATHOLOGY_DIAG_CODE2" ColumnName="PATHOLOGY_DIAG_CODE2" />
+          <ScalarProperty Name="PATHOLOGY_NO" ColumnName="PATHOLOGY_NO" />
+          <ScalarProperty Name="PATHOLOGY_DIAG_NAME" ColumnName="PATHOLOGY_DIAG_NAME" />
+          <ScalarProperty Name="PATHOLOGY_DIAG_CODE" ColumnName="PATHOLOGY_DIAG_CODE" />
+          <ScalarProperty Name="OTHER_DIAG_CODE" ColumnName="OTHER_DIAG_CODE" />
+          <ScalarProperty Name="MAIN_DIAG_OUT_CONDITION" ColumnName="MAIN_DIAG_OUT_CONDITION" />
+          <ScalarProperty Name="MAIN_DIAG_IN_CONDITION" ColumnName="MAIN_DIAG_IN_CONDITION" />
+          <ScalarProperty Name="MAIN_DIAG_DESC" ColumnName="MAIN_DIAG_DESC" />
+          <ScalarProperty Name="MAIN_DIAG_CODE" ColumnName="MAIN_DIAG_CODE" />
+          <ScalarProperty Name="IN_DIAG_DATE" ColumnName="IN_DIAG_DATE" />
+          <ScalarProperty Name="IN_DIAG_NAME" ColumnName="IN_DIAG_NAME" />
+          <ScalarProperty Name="IN_DIAG_CODE" ColumnName="IN_DIAG_CODE" />
+          <ScalarProperty Name="OUTPAT_DIAG_NAME" ColumnName="OUTPAT_DIAG_NAME" />
+          <ScalarProperty Name="OUTPAT_DIAG_CODE" ColumnName="OUTPAT_DIAG_CODE" />
+          <ScalarProperty Name="IN_SOURCE_CODE" ColumnName="IN_SOURCE_CODE" />
+          <ScalarProperty Name="ACTUAL_IN_DAYS" ColumnName="ACTUAL_IN_DAYS" />
+          <ScalarProperty Name="OUT_DEPT_NAME" ColumnName="OUT_DEPT_NAME" />
+          <ScalarProperty Name="OUT_AREA_NAME" ColumnName="OUT_AREA_NAME" />
+          <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+          <ScalarProperty Name="TRANSFER_DEPT_NAME" ColumnName="TRANSFER_DEPT_NAME" />
+          <ScalarProperty Name="IN_DEPT_NAME" ColumnName="IN_DEPT_NAME" />
+          <ScalarProperty Name="IN_AREA_NAME" ColumnName="IN_AREA_NAME" />
+          <ScalarProperty Name="IN_DATE" ColumnName="IN_DATE" />
+          <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+          <ScalarProperty Name="NATION_NAME" ColumnName="NATION_NAME" />
+          <ScalarProperty Name="COUNTY" ColumnName="COUNTY" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+          <ScalarProperty Name="OCCUPATION" ColumnName="OCCUPATION" />
+          <ScalarProperty Name="MARI_STAT_CODE" ColumnName="MARI_STAT_CODE" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="BIRTH_DATE" ColumnName="BIRTH_DATE" />
+          <ScalarProperty Name="GENDER_CODE" ColumnName="GENDER_CODE" />
+          <ScalarProperty Name="ID_NO" ColumnName="ID_NO" />
+          <ScalarProperty Name="PATIENT_NAME" ColumnName="PATIENT_NAME" />
+          <ScalarProperty Name="CASE_NO" ColumnName="CASE_NO" />
+          <ScalarProperty Name="PAY_WAY" ColumnName="PAY_WAY" />
+          <ScalarProperty Name="IN_TIMES" ColumnName="IN_TIMES" />
+          <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_NURSE_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_NURSE_RECORD">
+        <MappingFragment StoreEntitySet="DP_NURSE_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="REC_DATE" ColumnName="REC_DATE" />
+          <ScalarProperty Name="ITEM_VALUES" ColumnName="ITEM_VALUES" />
+          <ScalarProperty Name="NURSE_ITEM_CODE" ColumnName="NURSE_ITEM_CODE" />
+          <ScalarProperty Name="NURSE_TYPE_CODE" ColumnName="NURSE_TYPE_CODE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="NUR_REC_ID" ColumnName="NUR_REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_OPERATION_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_OPERATION_RECORD">
+        <MappingFragment StoreEntitySet="DP_OPERATION_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="OPERATION_DATE" ColumnName="OPERATION_DATE" />
+          <ScalarProperty Name="OPERATION_DOCTOR_NAME" ColumnName="OPERATION_DOCTOR_NAME" />
+          <ScalarProperty Name="OPERATION_DOCTOR_CODE" ColumnName="OPERATION_DOCTOR_CODE" />
+          <ScalarProperty Name="OPERATION_ING_DRUG" ColumnName="OPERATION_ING_DRUG" />
+          <ScalarProperty Name="PREOPERATIVE_DRUG" ColumnName="PREOPERATIVE_DRUG" />
+          <ScalarProperty Name="INFUSION" ColumnName="INFUSION" />
+          <ScalarProperty Name="TRANSFUSION_BLOOD" ColumnName="TRANSFUSION_BLOOD" />
+          <ScalarProperty Name="SHED_BLOOD" ColumnName="SHED_BLOOD" />
+          <ScalarProperty Name="SKIN_DISINFECTION" ColumnName="SKIN_DISINFECTION" />
+          <ScalarProperty Name="OPERATION_HISTORY_FLAG" ColumnName="OPERATION_HISTORY_FLAG" />
+          <ScalarProperty Name="OPERATION_COURSE" ColumnName="OPERATION_COURSE" />
+          <ScalarProperty Name="POSITION_NAME" ColumnName="POSITION_NAME" />
+          <ScalarProperty Name="WOUND_GRADE" ColumnName="WOUND_GRADE" />
+          <ScalarProperty Name="OPERATION_GRADE" ColumnName="OPERATION_GRADE" />
+          <ScalarProperty Name="OPERATION_NAME" ColumnName="OPERATION_NAME" />
+          <ScalarProperty Name="OPERATION_CODE" ColumnName="OPERATION_CODE" />
+          <ScalarProperty Name="EQUIPMENT_COUNT" ColumnName="EQUIPMENT_COUNT" />
+          <ScalarProperty Name="EQUIPMENT_TYPE" ColumnName="EQUIPMENT_TYPE" />
+          <ScalarProperty Name="OPERATION_TYPE" ColumnName="OPERATION_TYPE" />
+          <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+          <ScalarProperty Name="IN_DATE" ColumnName="IN_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="EMERGENCY_INDICATOR" ColumnName="EMERGENCY_INDICATOR" />
+          <ScalarProperty Name="POSTOPERATIVE_DIAG" ColumnName="POSTOPERATIVE_DIAG" />
+          <ScalarProperty Name="PREOPERATIVE_DIAG" ColumnName="PREOPERATIVE_DIAG" />
+          <ScalarProperty Name="APPLY_NO" ColumnName="APPLY_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CLINIC_CODE" ColumnName="CLINIC_CODE" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="OP_REC_ID" ColumnName="OP_REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_OUT_EMR">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_OUT_EMR">
+        <MappingFragment StoreEntitySet="DP_OUT_EMR">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="DIAGNOSIS_NAME" ColumnName="DIAGNOSIS_NAME" />
+          <ScalarProperty Name="DIAGNOSIS_CODE" ColumnName="DIAGNOSIS_CODE" />
+          <ScalarProperty Name="CHECK_RESULT" ColumnName="CHECK_RESULT" />
+          <ScalarProperty Name="CHECK_ITEM_NAME" ColumnName="CHECK_ITEM_NAME" />
+          <ScalarProperty Name="PHYSICAL" ColumnName="PHYSICAL" />
+          <ScalarProperty Name="FIRST_VISIT_FLAG" ColumnName="FIRST_VISIT_FLAG" />
+          <ScalarProperty Name="CASE_OLD" ColumnName="CASE_OLD" />
+          <ScalarProperty Name="CASE_NOW" ColumnName="CASE_NOW" />
+          <ScalarProperty Name="CASE_ALLERGY" ColumnName="CASE_ALLERGY" />
+          <ScalarProperty Name="COMPLAINTS" ColumnName="COMPLAINTS" />
+          <ScalarProperty Name="VISIT_DATE" ColumnName="VISIT_DATE" />
+          <ScalarProperty Name="PATIENT_NAME" ColumnName="PATIENT_NAME" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="EMR_REC_ID" ColumnName="EMR_REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_OUT_PATIENT">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_OUT_PATIENT">
+        <MappingFragment StoreEntitySet="DP_OUT_PATIENT">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="FIRST_VISIT_FLAG" ColumnName="FIRST_VISIT_FLAG" />
+          <ScalarProperty Name="DIAG_DATE" ColumnName="DIAG_DATE" />
+          <ScalarProperty Name="DIAG_NAME" ColumnName="DIAG_NAME" />
+          <ScalarProperty Name="DIAG_CODE" ColumnName="DIAG_CODE" />
+          <ScalarProperty Name="DOCTOR_NAME" ColumnName="DOCTOR_NAME" />
+          <ScalarProperty Name="DOCTOR_CODE" ColumnName="DOCTOR_CODE" />
+          <ScalarProperty Name="SEE_DATE" ColumnName="SEE_DATE" />
+          <ScalarProperty Name="SEE_NO" ColumnName="SEE_NO" />
+          <ScalarProperty Name="REG_LEVEL_NAME" ColumnName="REG_LEVEL_NAME" />
+          <ScalarProperty Name="REG_LEVEL_CODE" ColumnName="REG_LEVEL_CODE" />
+          <ScalarProperty Name="REG_DEPT_NAME" ColumnName="REG_DEPT_NAME" />
+          <ScalarProperty Name="REG_DEPT_CODE" ColumnName="REG_DEPT_CODE" />
+          <ScalarProperty Name="REG_DATE" ColumnName="REG_DATE" />
+          <ScalarProperty Name="CHARGE_TYPE_NAME" ColumnName="CHARGE_TYPE_NAME" />
+          <ScalarProperty Name="CHARGE_TYPE_CODE" ColumnName="CHARGE_TYPE_CODE" />
+          <ScalarProperty Name="MARI_STAT_CODE" ColumnName="MARI_STAT_CODE" />
+          <ScalarProperty Name="NATION_NAME" ColumnName="NATION_NAME" />
+          <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+          <ScalarProperty Name="GENDER_CODE" ColumnName="GENDER_CODE" />
+          <ScalarProperty Name="BIRTH_DATE" ColumnName="BIRTH_DATE" />
+          <ScalarProperty Name="ID_NO" ColumnName="ID_NO" />
+          <ScalarProperty Name="PATIENT_NAME" ColumnName="PATIENT_NAME" />
+          <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
+          <ScalarProperty Name="CASE_NO" ColumnName="CASE_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_OUT_RECIPE">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_OUT_RECIPE">
+        <MappingFragment StoreEntitySet="DP_OUT_RECIPE">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="EXEC_DATE" ColumnName="EXEC_DATE" />
+          <ScalarProperty Name="EXEC_DEPT_NAME" ColumnName="EXEC_DEPT_NAME" />
+          <ScalarProperty Name="EXEC_DEPT_CODE" ColumnName="EXEC_DEPT_CODE" />
+          <ScalarProperty Name="USE_DAYS" ColumnName="USE_DAYS" />
+          <ScalarProperty Name="QTY_TOT_UNIT" ColumnName="QTY_TOT_UNIT" />
+          <ScalarProperty Name="QTY_TOT" ColumnName="QTY_TOT" />
+          <ScalarProperty Name="DOSE_UNIT" ColumnName="DOSE_UNIT" />
+          <ScalarProperty Name="DOSE_ONCE" ColumnName="DOSE_ONCE" />
+          <ScalarProperty Name="FREQ_NAME" ColumnName="FREQ_NAME" />
+          <ScalarProperty Name="FREQ_CODE" ColumnName="FREQ_CODE" />
+          <ScalarProperty Name="USAGE_NAME" ColumnName="USAGE_NAME" />
+          <ScalarProperty Name="USAGE_CODE" ColumnName="USAGE_CODE" />
+          <ScalarProperty Name="GYTJ_NAME" ColumnName="GYTJ_NAME" />
+          <ScalarProperty Name="GYTJ_CODE" ColumnName="GYTJ_CODE" />
+          <ScalarProperty Name="ITEM_GOODS_NAME" ColumnName="ITEM_GOODS_NAME" />
+          <ScalarProperty Name="DOCTOR_NAME" ColumnName="DOCTOR_NAME" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
+          <ScalarProperty Name="RECIPE_TYPE_CODE" ColumnName="RECIPE_TYPE_CODE" />
+          <ScalarProperty Name="RECIPE_DATE" ColumnName="RECIPE_DATE" />
+          <ScalarProperty Name="APPLY_NO" ColumnName="APPLY_NO" />
+          <ScalarProperty Name="RECIPE_NO" ColumnName="RECIPE_NO" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="RECIPE_ID" ColumnName="RECIPE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_PATHOLOGY_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_PATHOLOGY_RECORD">
+        <MappingFragment StoreEntitySet="DP_PATHOLOGY_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="REPORT_DOCTOR_NAME" ColumnName="REPORT_DOCTOR_NAME" />
+          <ScalarProperty Name="REPORT_DATE_TIME" ColumnName="REPORT_DATE_TIME" />
+          <ScalarProperty Name="FROZEN_REPORT_DATE" ColumnName="FROZEN_REPORT_DATE" />
+          <ScalarProperty Name="FROZEN_RESULT" ColumnName="FROZEN_RESULT" />
+          <ScalarProperty Name="SECTION_COUNT" ColumnName="SECTION_COUNT" />
+          <ScalarProperty Name="POSITIVE" ColumnName="POSITIVE" />
+          <ScalarProperty Name="PATHOLOGY" ColumnName="PATHOLOGY" />
+          <ScalarProperty Name="BIOPSY" ColumnName="BIOPSY" />
+          <ScalarProperty Name="REPORT_RESULT" ColumnName="REPORT_RESULT" />
+          <ScalarProperty Name="REPORT_SUBJECTIVE" ColumnName="REPORT_SUBJECTIVE" />
+          <ScalarProperty Name="REPORT_OBJECTIVE" ColumnName="REPORT_OBJECTIVE" />
+          <ScalarProperty Name="CHECK_DATE" ColumnName="CHECK_DATE" />
+          <ScalarProperty Name="CHECK_DOCTOR_NAME" ColumnName="CHECK_DOCTOR_NAME" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
+          <ScalarProperty Name="RECEIVE_DATE" ColumnName="RECEIVE_DATE" />
+          <ScalarProperty Name="SAMPLE_TYPE_NAME" ColumnName="SAMPLE_TYPE_NAME" />
+          <ScalarProperty Name="SAMPLE_PART" ColumnName="SAMPLE_PART" />
+          <ScalarProperty Name="SAMPLING_DATE" ColumnName="SAMPLING_DATE" />
+          <ScalarProperty Name="APPLY_DOCTOR_NAME" ColumnName="APPLY_DOCTOR_NAME" />
+          <ScalarProperty Name="APPLY_DEPT_NAME" ColumnName="APPLY_DEPT_NAME" />
+          <ScalarProperty Name="APPLY_DEPT_CODE" ColumnName="APPLY_DEPT_CODE" />
+          <ScalarProperty Name="APPLY_DATE" ColumnName="APPLY_DATE" />
+          <ScalarProperty Name="APPLY_NO" ColumnName="APPLY_NO" />
+          <ScalarProperty Name="MEDICAL_HISTORY" ColumnName="MEDICAL_HISTORY" />
+          <ScalarProperty Name="DIAGNOSE_NAME" ColumnName="DIAGNOSE_NAME" />
+          <ScalarProperty Name="COMPLAINTS" ColumnName="COMPLAINTS" />
+          <ScalarProperty Name="MO_CHECK_NO" ColumnName="MO_CHECK_NO" />
+          <ScalarProperty Name="CASE_NO" ColumnName="CASE_NO" />
+          <ScalarProperty Name="GENDER_CODE" ColumnName="GENDER_CODE" />
+          <ScalarProperty Name="BIRTH_DATE" ColumnName="BIRTH_DATE" />
+          <ScalarProperty Name="PATIENT_NAME" ColumnName="PATIENT_NAME" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CLINIC_CODE" ColumnName="CLINIC_CODE" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="PATHOLOGY_ID" ColumnName="PATHOLOGY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_TEST_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_TEST_RECORD">
+        <MappingFragment StoreEntitySet="DP_TEST_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="REPORT_DOCTOR_NAME" ColumnName="REPORT_DOCTOR_NAME" />
+          <ScalarProperty Name="REPORT_DATE" ColumnName="REPORT_DATE" />
+          <ScalarProperty Name="TEST_DATE" ColumnName="TEST_DATE" />
+          <ScalarProperty Name="RECEIVE_DATE" ColumnName="RECEIVE_DATE" />
+          <ScalarProperty Name="SAMPLING_DATE" ColumnName="SAMPLING_DATE" />
+          <ScalarProperty Name="APPLY_DATE" ColumnName="APPLY_DATE" />
+          <ScalarProperty Name="APPLY_DEP_NAME" ColumnName="APPLY_DEP_NAME" />
+          <ScalarProperty Name="APPLY_DEP_CODE" ColumnName="APPLY_DEP_CODE" />
+          <ScalarProperty Name="SAMPLE_BODY" ColumnName="SAMPLE_BODY" />
+          <ScalarProperty Name="SAMPLE_TYPE_NAME" ColumnName="SAMPLE_TYPE_NAME" />
+          <ScalarProperty Name="SAMPLE_TYPE_CODE" ColumnName="SAMPLE_TYPE_CODE" />
+          <ScalarProperty Name="TEST_ITEM_NAME" ColumnName="TEST_ITEM_NAME" />
+          <ScalarProperty Name="TEST_ITEM_CODE" ColumnName="TEST_ITEM_CODE" />
+          <ScalarProperty Name="GERM_FLAG" ColumnName="GERM_FLAG" />
+          <ScalarProperty Name="APPLY_NO" ColumnName="APPLY_NO" />
+          <ScalarProperty Name="MO_TEST_NO" ColumnName="MO_TEST_NO" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CLINIC_CODE" ColumnName="CLINIC_CODE" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="SAMPLE_NO" ColumnName="SAMPLE_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_TEST_RESULT">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_TEST_RESULT">
+        <MappingFragment StoreEntitySet="DP_TEST_RESULT">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="TEST_METHOD_NAME" ColumnName="TEST_METHOD_NAME" />
+          <ScalarProperty Name="TEST_METHOD_CODE" ColumnName="TEST_METHOD_CODE" />
+          <ScalarProperty Name="RESULT_STATUS" ColumnName="RESULT_STATUS" />
+          <ScalarProperty Name="MAX_RANGE" ColumnName="MAX_RANGE" />
+          <ScalarProperty Name="MIN_RANGE" ColumnName="MIN_RANGE" />
+          <ScalarProperty Name="REF_RANGE" ColumnName="REF_RANGE" />
+          <ScalarProperty Name="RESULT_UNIT" ColumnName="RESULT_UNIT" />
+          <ScalarProperty Name="RESULT_VALUE" ColumnName="RESULT_VALUE" />
+          <ScalarProperty Name="RESULT_ITEM_NAME" ColumnName="RESULT_ITEM_NAME" />
+          <ScalarProperty Name="RESULT_ITEM_CODE" ColumnName="RESULT_ITEM_CODE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CLINIC_CODE" ColumnName="CLINIC_CODE" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="SAMPLE_NO" ColumnName="SAMPLE_NO" />
+          <ScalarProperty Name="RESULT_ID" ColumnName="RESULT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_TEST_RESULT_GERM">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_TEST_RESULT_GERM">
+        <MappingFragment StoreEntitySet="DP_TEST_RESULT_GERM">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="LETTER_RESULT" ColumnName="LETTER_RESULT" />
+          <ScalarProperty Name="NUM_RESULT" ColumnName="NUM_RESULT" />
+          <ScalarProperty Name="ANTI_NAME" ColumnName="ANTI_NAME" />
+          <ScalarProperty Name="ANTI_CODE" ColumnName="ANTI_CODE" />
+          <ScalarProperty Name="GERM_NAME" ColumnName="GERM_NAME" />
+          <ScalarProperty Name="GERM_CODE" ColumnName="GERM_CODE" />
+          <ScalarProperty Name="CULTURE_RESULT" ColumnName="CULTURE_RESULT" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="CLINIC_CODE" ColumnName="CLINIC_CODE" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="SAMPLE_NO" ColumnName="SAMPLE_NO" />
+          <ScalarProperty Name="GERM_ID" ColumnName="GERM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_TRANS_RECORD">
+      <EntityTypeMapping TypeName="TestCenterSystem.Model.CDRModel.DP_TRANS_RECORD">
+        <MappingFragment StoreEntitySet="DP_TRANS_RECORD">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="REASON" ColumnName="REASON" />
+          <ScalarProperty Name="TRANS_OUT_DATE" ColumnName="TRANS_OUT_DATE" />
+          <ScalarProperty Name="TRANS_IN_DATE" ColumnName="TRANS_IN_DATE" />
+          <ScalarProperty Name="IN_DEPT_NAME" ColumnName="IN_DEPT_NAME" />
+          <ScalarProperty Name="IN_DEPT_CODE" ColumnName="IN_DEPT_CODE" />
+          <ScalarProperty Name="OUT_DEPT_NAME" ColumnName="OUT_DEPT_NAME" />
+          <ScalarProperty Name="OUT_DEPT_CODE" ColumnName="OUT_DEPT_CODE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="TRANS_REC_ID" ColumnName="TRANS_REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

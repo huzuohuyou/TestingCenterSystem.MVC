@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestingCenterSystemModelsPDPStoreContainer" CdmEntityContainer="PDPEntities">
+    <EntitySetMapping Name="PDP_DB_CONF">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.PDP_DB_CONF">
+        <MappingFragment StoreEntitySet="PDP_DB_CONF">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="DB_PWD" ColumnName="DB_PWD" />
+          <ScalarProperty Name="DB_USER" ColumnName="DB_USER" />
+          <ScalarProperty Name="DB_NAME" ColumnName="DB_NAME" />
+          <ScalarProperty Name="SERVER_NAME" ColumnName="SERVER_NAME" />
+          <ScalarProperty Name="DB_CONF_TYPE" ColumnName="DB_CONF_TYPE" />
+          <ScalarProperty Name="TC_PROJ_ID" ColumnName="TC_PROJ_ID" />
+          <ScalarProperty Name="DB_CONF_ID" ColumnName="DB_CONF_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDP_ERROR_LOG">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.PDP_ERROR_LOG">
+        <MappingFragment StoreEntitySet="PDP_ERROR_LOG">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="ERR_CONTENT" ColumnName="ERR_CONTENT" />
+          <ScalarProperty Name="FUNC_NAME" ColumnName="FUNC_NAME" />
+          <ScalarProperty Name="CLASS_NAME" ColumnName="CLASS_NAME" />
+          <ScalarProperty Name="DLL_NAME" ColumnName="DLL_NAME" />
+          <ScalarProperty Name="PROC_URL" ColumnName="PROC_URL" />
+          <ScalarProperty Name="PROC_TYPE" ColumnName="PROC_TYPE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="ERROR_LOG_ID" ColumnName="ERROR_LOG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDP_PROC_LOG">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.PDP_PROC_LOG">
+        <MappingFragment StoreEntitySet="PDP_PROC_LOG">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="PROC_CONTENT_ID" ColumnName="PROC_CONTENT_ID" />
+          <ScalarProperty Name="PROC_CAT_CODE" ColumnName="PROC_CAT_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="PROC_LOG_ID" ColumnName="PROC_LOG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDP_PROC_STAT">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.PDP_PROC_STAT">
+        <MappingFragment StoreEntitySet="PDP_PROC_STAT">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="PROC_STAT_CODE" ColumnName="PROC_STAT_CODE" />
+          <ScalarProperty Name="PROC_CONTENT_ID" ColumnName="PROC_CONTENT_ID" />
+          <ScalarProperty Name="PROC_CAT_CODE" ColumnName="PROC_CAT_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDP_PROJECT">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.PDP_PROJECT">
+        <MappingFragment StoreEntitySet="PDP_PROJECT">
+          <ScalarProperty Name="TC_PROJ_CODE" ColumnName="TC_PROJ_CODE" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="TC_PROJ_TYPE" ColumnName="TC_PROJ_TYPE" />
+          <ScalarProperty Name="IS_COMMON" ColumnName="IS_COMMON" />
+          <ScalarProperty Name="TC_PROJ_NAME" ColumnName="TC_PROJ_NAME" />
+          <ScalarProperty Name="TC_PROJ_ID" ColumnName="TC_PROJ_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_CAT_CONF">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_CAT_CONF">
+        <MappingFragment StoreEntitySet="SD_CAT_CONF">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="CAT_SUB_NAME" ColumnName="CAT_SUB_NAME" />
+          <ScalarProperty Name="CAT_SUB_CODE" ColumnName="CAT_SUB_CODE" />
+          <ScalarProperty Name="CAT_PA_NAME" ColumnName="CAT_PA_NAME" />
+          <ScalarProperty Name="CAT_PA_CODE" ColumnName="CAT_PA_CODE" />
+          <ScalarProperty Name="CAT_TYPE_NAME" ColumnName="CAT_TYPE_NAME" />
+          <ScalarProperty Name="CAT_TYPE_CODE" ColumnName="CAT_TYPE_CODE" />
+          <ScalarProperty Name="CAT_NAME" ColumnName="CAT_NAME" />
+          <ScalarProperty Name="CAT_CODE" ColumnName="CAT_CODE" />
+          <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_CPAT_DETAIL">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_CPAT_DETAIL">
+        <MappingFragment StoreEntitySet="SD_CPAT_DETAIL">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+          <ScalarProperty Name="IN_DATE" ColumnName="IN_DATE" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="BASE_FLAG" ColumnName="BASE_FLAG" />
+          <ScalarProperty Name="IN_FLAG" ColumnName="IN_FLAG" />
+          <ScalarProperty Name="PATIENT_NO" ColumnName="PATIENT_NO" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="DETAIL_ID" ColumnName="DETAIL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_CPATS">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_CPATS">
+        <MappingFragment StoreEntitySet="SD_CPATS">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="PATIENT_ID" ColumnName="PATIENT_ID" />
+          <ScalarProperty Name="SD_CPAT_DATE" ColumnName="SD_CPAT_DATE" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_FILTER_ID" ColumnName="SD_FILTER_ID" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_EKPI_FORMULA">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_EKPI_FORMULA">
+        <MappingFragment StoreEntitySet="SD_EKPI_FORMULA">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="FRA_FORMULA" ColumnName="FRA_FORMULA" />
+          <ScalarProperty Name="NUM_FORMULA" ColumnName="NUM_FORMULA" />
+          <ScalarProperty Name="SD_EKPI_ID" ColumnName="SD_EKPI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_EKPI_INFO">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_EKPI_INFO">
+        <MappingFragment StoreEntitySet="SD_EKPI_INFO">
+          <ScalarProperty Name="SD_EKPI_DESC" ColumnName="SD_EKPI_DESC" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="VALID_FLAG" ColumnName="VALID_FLAG" />
+          <ScalarProperty Name="IS_TREND" ColumnName="IS_TREND" />
+          <ScalarProperty Name="IS_DISTRIBUTION" ColumnName="IS_DISTRIBUTION" />
+          <ScalarProperty Name="IS_RSN" ColumnName="IS_RSN" />
+          <ScalarProperty Name="SD_EKPI_ALGO" ColumnName="SD_EKPI_ALGO" />
+          <ScalarProperty Name="IS_POSITIVE" ColumnName="IS_POSITIVE" />
+          <ScalarProperty Name="SD_EKPI_CAT" ColumnName="SD_EKPI_CAT" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="SD_EKPI_ALIAS" ColumnName="SD_EKPI_ALIAS" />
+          <ScalarProperty Name="SD_EKPI_NAME" ColumnName="SD_EKPI_NAME" />
+          <ScalarProperty Name="SD_EKPI_CODE" ColumnName="SD_EKPI_CODE" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="SD_EKPI_ID" ColumnName="SD_EKPI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_EKPI_PARAM">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_EKPI_PARAM">
+        <MappingFragment StoreEntitySet="SD_EKPI_PARAM">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="SD_EKPI_PARAM_NAME" ColumnName="SD_EKPI_PARAM_NAME" />
+          <ScalarProperty Name="SD_ITEM_ID" ColumnName="SD_ITEM_ID" />
+          <ScalarProperty Name="SD_EKPI_ID" ColumnName="SD_EKPI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_EPKI_VALUE">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_EPKI_VALUE">
+        <MappingFragment StoreEntitySet="SD_EPKI_VALUE">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="RSN_FLAG" ColumnName="RSN_FLAG" />
+          <ScalarProperty Name="INDEX_VALUE" ColumnName="INDEX_VALUE" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="SD_EKPI_ID" ColumnName="SD_EKPI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_FILTER_INFO">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_FILTER_INFO">
+        <MappingFragment StoreEntitySet="SD_FILTER_INFO">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="VALID_FLAG" ColumnName="VALID_FLAG" />
+          <ScalarProperty Name="SD_FILTER_ALGO" ColumnName="SD_FILTER_ALGO" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="SD_FILTER_NAME" ColumnName="SD_FILTER_NAME" />
+          <ScalarProperty Name="SD_FILTER_CODE" ColumnName="SD_FILTER_CODE" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="SD_FILTER_ID" ColumnName="SD_FILTER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_INFO">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_INFO">
+        <MappingFragment StoreEntitySet="SD_INFO">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="VALID_FLAG" ColumnName="VALID_FLAG" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="EKPI_CAT_PA_CODE" ColumnName="EKPI_CAT_PA_CODE" />
+          <ScalarProperty Name="CITEM_CAT_PA_CODE" ColumnName="CITEM_CAT_PA_CODE" />
+          <ScalarProperty Name="ITEM_CAT_PA_CODE" ColumnName="ITEM_CAT_PA_CODE" />
+          <ScalarProperty Name="SD_ALIAS" ColumnName="SD_ALIAS" />
+          <ScalarProperty Name="SD_NAME" ColumnName="SD_NAME" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="TC_PROJ_TYPE" ColumnName="TC_PROJ_TYPE" />
+          <ScalarProperty Name="TC_PROJ_ID" ColumnName="TC_PROJ_ID" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_ITEM_DEP">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_ITEM_DEP">
+        <MappingFragment StoreEntitySet="SD_ITEM_DEP">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="DEP_SD_ITEM_ID" ColumnName="DEP_SD_ITEM_ID" />
+          <ScalarProperty Name="SD_ITEM_ID" ColumnName="SD_ITEM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_ITEM_INFO">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_ITEM_INFO">
+        <MappingFragment StoreEntitySet="SD_ITEM_INFO">
+          <ScalarProperty Name="COM_SD_ID" ColumnName="COM_SD_ID" />
+          <ScalarProperty Name="COM_SD_ITEM_CODE" ColumnName="COM_SD_ITEM_CODE" />
+          <ScalarProperty Name="SD_EKPI_DESC" ColumnName="SD_EKPI_DESC" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="VALID_FLAG" ColumnName="VALID_FLAG" />
+          <ScalarProperty Name="SD_ITEM_ALGO" ColumnName="SD_ITEM_ALGO" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="IS_RESULT" ColumnName="IS_RESULT" />
+          <ScalarProperty Name="SD_ITEM_SRC" ColumnName="SD_ITEM_SRC" />
+          <ScalarProperty Name="NUM_PRECISION" ColumnName="NUM_PRECISION" />
+          <ScalarProperty Name="SD_ITEM_UNIT" ColumnName="SD_ITEM_UNIT" />
+          <ScalarProperty Name="SD_ITEM_DATA_TYPE" ColumnName="SD_ITEM_DATA_TYPE" />
+          <ScalarProperty Name="SD_ITEM_CAT_ID" ColumnName="SD_ITEM_CAT_ID" />
+          <ScalarProperty Name="SD_ITEM_ALIAS" ColumnName="SD_ITEM_ALIAS" />
+          <ScalarProperty Name="SD_ITEM_NAME" ColumnName="SD_ITEM_NAME" />
+          <ScalarProperty Name="SD_ITEM_CODE" ColumnName="SD_ITEM_CODE" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="SD_ITEM_ID" ColumnName="SD_ITEM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_ITEM_OPTION">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.SD_ITEM_OPTION">
+        <MappingFragment StoreEntitySet="SD_ITEM_OPTION">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="ITEM_OPTION_NAME" ColumnName="ITEM_OPTION_NAME" />
+          <ScalarProperty Name="SD_ITEM_ID" ColumnName="SD_ITEM_ID" />
+          <ScalarProperty Name="ITEM_OPTION_ID" ColumnName="ITEM_OPTION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SD_ITEM_VALUE">
+      <EntityTypeMapping TypeName="TestingCenterSystem.Models.PDP.PDP_SD_ITEM_VALUE">
+        <MappingFragment StoreEntitySet="SD_ITEM_VALUE">
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPD_USER_ID" ColumnName="UPD_USER_ID" />
+          <ScalarProperty Name="LAST_VALUE" ColumnName="LAST_VALUE" />
+          <ScalarProperty Name="SD_ITEM_VALUE" ColumnName="SD_ITEM_VALUE" />
+          <ScalarProperty Name="SD_FILTER_ID" ColumnName="SD_FILTER_ID" />
+          <ScalarProperty Name="SD_CODE" ColumnName="SD_CODE" />
+          <ScalarProperty Name="SD_ID" ColumnName="SD_ID" />
+          <ScalarProperty Name="SD_CPAT_NO" ColumnName="SD_CPAT_NO" />
+          <ScalarProperty Name="SD_ITEM_ID" ColumnName="SD_ITEM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

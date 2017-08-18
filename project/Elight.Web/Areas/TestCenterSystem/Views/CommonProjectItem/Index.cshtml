@@ -1,0 +1,308 @@
+﻿@{
+    ViewBag.Title = "公共项目数据项";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    @*<meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">*@
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/console.css" rel="stylesheet" />
+    <link href="~/Content/framework/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery.min.js"></script>
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/framework/js/global.js"></script>
+    <style>
+        .close {
+            width: 800px;
+            height: 20px;
+            overflow: hidden;
+            line-height: 24px;
+        }
+
+        .open {
+            width: 800px;
+            line-height: 24px;
+        }
+
+        .hid {
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel animated fadeIn">
+        <div class="panel-body">
+            <div style="margin-left:10px;">
+                <div>
+                    @*<p style="font-size: 14px;">数据项名称：@ViewBag.ItemName</p>*@
+                    <p style="font-size: 13px;">所属病种：@ViewBag.SD_NAME   所属项目：@ViewBag.TC_PROJECT_NAME</p>
+                    @*<p style="font-size: 13px;">数据项代码：@ViewBag.ItemCode    数据项简称：@ViewBag.ItemOtherName    数据项类别：@ViewBag.ItemType</p>*@
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <p id="textblock" class="close">逻辑描述：这是公共项目的数据项页。她尽可能地在以更少的代码展现更强健的功能，且格外注重性能的提升、易用和实用性，正因如此，越来越多的开发者将媚眼投上了layer（已被4693299人次关注）。layer 甚至兼容了包括IE6在内的所有主流浏览器。她数量可观的接口，使得您可以自定义太多您需要的风格，每一种弹层模式各具特色，广受欢迎。当然，这种“王婆卖瓜”的陈述听起来总是有点难受，因此你需要进一步了解她是否真的如你所愿。@ViewBag.ItemDesc</p>
+                        </div>
+                        <div class="layui-inline">
+                            <p id="opentool" class="show" style="font-size: 13px; float:right">
+                                <a href="javascript:void(0);" onclick="openText()" style="color:dodgerblue" title="展开">
+                                    展开<i class="layui-icon" style="font-size: 13px;">&#xe61a;</i>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="layui-inline">
+                            <p id="closetool" class="hid" style="font-size: 13px;">
+                                <a href="javascript:void(0);" onclick="openText()" style="color:dodgerblue;" title="收起">
+                                    收起<i class="layui-icon" style="font-size: 13px;">&#xe619;</i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="toolbar" class="elight-table-toolbar" style="margin-left:10px">
+                <div class="layui-btn-group">
+                    @*<button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_dependset()"><i class="layui-icon">&#xe614;</i>依赖设置 </button>*@
+                    <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_add()"><i class="layui-icon">&#xe61f;</i>添加</button>
+                    <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_select()"><i class="layui-icon">&#xe60b;</i>查看 </button>
+                    <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_update()"><i class="layui-icon">&#xe642;</i>修改</button>
+                    <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_manage()"><i class="layui-icon">&#xe620;</i>依赖设置</button>
+                    <button class="layui-btn layui-btn-primary layui-btn-small" onclick="btn_delete()"><i class="layui-icon">&#xe640;</i>删除</button>
+                </div>
+                <button id="btnSearch" class="toolbar-search-button layui-btn layui-btn-normal layui-btn-small">
+                    <i class="layui-icon">&#xe615;</i>
+                </button>
+                <div class="toolbar-search-input">
+                    <input type="text" id="keyWord" placeholder="请输入数据项名称、代码、状态" autocomplete="off" class="layui-input" style="width: 300px;">
+                </div>
+            </div>
+            <table id="gridList" class="layui-form layui-table table-hover elight-table" style="background-color:white;margin-left:10px" lay-skin="line">
+                <thead>
+                    <tr onclick="tr_click(this)">
+                        <th>
+                            <input type="checkbox" lay-skin="primary">
+                        </th>
+                        <th>数据项代码</th>
+                        <th>数据项名称</th>
+                        <th>类别</th>
+                        <th>有效标志</th>
+                        <th hidden>是否执行</th>
+                        <th hidden>来源</th>
+                        <th>依赖数据项</th>
+                        @*<th>最后执行人</th>
+                            <th>最后执行时间</th>*@
+                    </tr>
+                </thead>
+                <tbody id="content"></tbody>
+            </table>
+            <div class="blog-manage-page">
+                <div class="layui-input-inline">
+                    <div id="paged" style="padding-left:20px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!--内容模板-->
+<script id="contentTpl" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+        <td>
+            <input id="selected" type="checkbox" lay-skin="primary" value="{{item.SD_ITEM_ID}}">
+        </td>
+        <td>{{item.SD_ITEM_CODE}}</td>
+        <td>{{item.SD_ITEM_NAME}}</td>
+        <td>{{item.SD_ITEM_CAT_NAME}} </td>
+        <td>
+            @*有效标志*@
+            {{# if(item.VALID_FLAG==1){ }} <input id="mark" class="layui-form-checkbox" value="1" lay-filter="switchMark" type="checkbox" lay-skin="switch" checked>
+            {{# }else if(item.VALID_FLAG==0){ }} <input id="mark" value="0" class="layui-form-checkbox" lay-filter="switchMark" type="checkbox" lay-skin="switch">
+            {{# } }}
+        </td>
+        <td>
+            @*是否已执行*@
+            {{# if(item.PROC_STAT_CODE==2){ }} <i class="layui-icon">&#xe605;</i> @*<span class="label label-success label-sm">启用</span>*@
+            {{# }else{ }} <i class="layui-icon">&#x1006;</i> @*<span class="label label-dark label-sm">禁用</span>*@
+            {{# } }}
+        </td>
+        <td>
+            {{# if(item.SD_ITEM_SRC==1){ }} 公共
+            {{# }else if(item.SD_ITEM_SRC==2){ }}自定义
+            {{# }else{ }}
+            {{# } }}
+        </td>
+        <td>{{item.DEP_SD_ITEM_NAME}}</td>
+    </tr>
+    {{#  }); }}
+    {{# if(d.list.length<=0) { }}
+    <tr style="color: red">
+        <td colspan="8">查无数据。</td>
+    </tr>
+    {{# } }}
+</script>
+<script type="text/javascript">
+    var paging;
+    var count;
+    var tab;
+    layui.config({
+        base: parent._baseUrl
+    }).use(['paging', 'form', 'layer', 'tab'], function () {
+        var layer = parent.layer || layui.layer;
+        var form = layui.form();
+        tab = layui.tab({
+            elem: '.layui-tab',
+            maxSetting: { max: 15 }
+        });
+        paging = layui.paging();
+        initGrid();
+        $("#toolbar").authorizeButton();
+        $('#btnSearch').click(initGrid);
+        $('#keyWord').bindEnterEvent(initGrid);
+
+        //监听mark，mark变化时更新数据库中对应的值
+        form.on("switch(switchMark)", function (data) {
+            var ids = data.elem.parentElement.parentElement.firstElementChild.firstElementChild.value;
+            //有效标志开启
+            $.formSubmit({
+                url: "/TestCenterSystem/CommonProjectItem/Switch?primaryKey=" + ids + "&valueFlag=" + data.value,
+                //data: { primaryKey: data.value },
+                success: function () {
+                    initGrid();
+                }
+            });
+        });
+    });
+    function initGrid() {
+        paging.init({
+            url: '/TestCenterSystem/CommonProjectItem/Index',
+            elem: '#content',
+            tempElem: '#contentTpl',
+            params: {
+                keyWord: $("#keyWord").val()
+            },
+            pageConfig: {
+                elem: '#paged',
+                pageSize: 5
+            },
+            success: function (result) {
+                count = result.count;
+
+            }
+        });
+    }
+    function btn_update() {
+        var ids = $("#gridList").children('tbody').find("input[id=selected][type=checkbox]:checked");//.gridSelectedRowValue();
+        if (ids.length != 1) {
+            $.layerMsg("请勾选单条记录修改。", "warning");
+            return;
+        }
+        var no = count;
+
+        $.layerOpen({
+            id: "update",
+            title: "修改数据项",
+            width: "680px",
+            height: "570px",
+            //content: "/TestCenterSystem/DataItem/Form?ItemCount=" + no + "&primaryKey=" + ids[0].value,
+            content: "/TestCenterSystem/CommonItem/Form?ItemCount=" + no + "&primaryKey=" + ids[0].value,
+            yes: function (iBody) {
+                iBody.find('#btnSubmit').click();
+                initGrid();
+            }
+        });
+    }
+    function btn_manage() {
+        var ids = $("#gridList").children('tbody').find("input[id=selected][type=checkbox]:checked");//.gridSelectedRowValue();
+        if (ids.length != 1) {
+            $.layerMsg("请勾选单条记录修改。", "warning");
+            return;
+        }
+
+        parent.tab.tabAdd({
+            href: "/TestCenterSystem/CommonProjectItem/Form?ItemCount=" + no + "&primaryKey=" + ids[0].value, //地址
+            icon: "",
+            title: "数据项配置"
+        });
+
+    }
+    function btn_delete() {
+        var ids = $("#gridList").children('tbody').find("input[id=selected][type=checkbox]:checked");//.gridSelectedRowValue();
+        if (ids.length < 1) {
+
+            $.layerMsg("请勾选需要删除的数据项。", "warning");
+            return;
+        }
+        //判断是自定义还是公共
+        var $source = ids.parent().parent().children().eq(6);
+        if ($source.text().trim() == "公共")
+        {
+        }
+        $.layerConfirm({
+            content: "您已选中" + ids.length + "条数据, 确定删除吗？",
+            callback: function () {
+                $.formSubmit({
+                    url: '/TestCenterSystem/CommonProjectItem/Delete?primaryKey=' + ids[0].value,
+                    success: function () {
+                        initGrid();
+                    }
+                });
+            }
+        });
+    }
+    function btn_select() {
+        var ids = $("#gridList").children('tbody').find("input[id=selected][type=checkbox]:checked");//.gridSelectedRowValue();
+        if (ids.length != 1) {
+            $.layerMsg("请勾选单条记录查看。", "warning");
+            return;
+        }
+        var no = count + 1;
+        $.layerOpen({
+            id: "detail",
+            title: "查看数据项",
+            width: "680px",
+            height: "530px",
+            content: "/TestCenterSystem/CommonProjectItem/Form?primaryKey=" + ids[0].value,
+            btn: null
+        });
+    }
+    //展开、收起
+    function openText() {
+        var go = $("#textblock").get(0);
+        var o = $("#opentool").get(0);
+        var c = $("#closetool").get(0);
+        if (go.className == "close") {
+            go.className = "open";
+            o.className = "hid";
+            c.className = "show";
+            return;
+        }
+        else {
+            go.className = "close";
+            c.className = "hid";
+            o.className = "show";
+            return;
+        }
+    }
+    function btn_add() {
+        var no = count + 1;
+        $.layerOpen({
+            id: "add",
+            title: "添加数据项",
+            width: "680px",
+            height: "600px",
+            content: "/TestCenterSystem/CommonProjectItem/Form?ItemCount=" + no,
+            yes: function (iBody) {
+                iBody.find('#btnSubmit').click();
+                initGrid();
+            }
+        });
+    }
+
+</script>
